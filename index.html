@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portafolio técnico de hardware, presupuestos y mantenimiento de PC. Proyecto de 5to año.">
+
+    <meta name="keywords" content="hardware, armado de pc, intel, asus, mantenimiento, arduino, informática">
+
+    <title>Portafolio — Santino Awada</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+
+    <nav>
+        <button id="btn-tema" class="interruptor-tema" title="Cambiar tema">☽</button>
+
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#componentes">Hardware</a></li>
+            <li><a href="#perifericos">Periféricos</a></li>
+            <li><a href="#presupuestos">Presupuestos</a></li>
+            <li><a href="#mantenimiento">Mantenimiento</a></li>
+            <li><a href="#arduino">Arduino e IoT</a></li>
+        </ul>
+    </nav>
+
+
+    <main>
+        <section id="inicio">
+            <h1>
+                <span id="titulo-principal">Bitácora</span>
+                <span id="titulo-secundario">de Laboratorio</span>
+            </h1>
+            <p>Santino Awada · Alumno · 5to Año · 2026</p>
+        </section>
+        <section id="componentes">
+            <h2>Diagnóstico de Componentes (PC Awada)</h2>
+            <a href="https://docs.google.com/document/d/1ZYHId2c0wLszfXAjR6R-Fr9BFYJiCQZ6SB7ojw4XT9c/edit?usp=sharing"
+                target="_blank">Ver Ficha Técnica Completa</a>
+            <div class="galeria-grid">
+                <div class="tarjeta">
+                    <img src="images/a320.png" alt="Placa Madre ASUS A320M-K PRIME" class="redondeada">
+                    <h3>Placa Madre</h3>
+                    <p>Modelo: ASUS A320M-K PRIME</p>
+                    <button id="btn-diagnostico" class="boton-accion">Ver Layout del Manual</button>
+                    <button onclick="document.getElementById('modal-hardware').showModal()" class="boton-accion">
+                        Ver TP 3
+                    </button>
+                </div>
+
+                <div class="tarjeta">
+                    <img src="images/2600.webp" alt="Procesador AMD Ryzen 5 2600" class="redondeada">
+                    <h3>Microprocesador</h3>
+                    <p>Modelo: Intel(R) AMD Ryzen 5 2600 @ 3.40 GHz</p>
+                    <p>Arquitectura: 64 bits, x86 y x64</p>
+                    <button onclick="document.getElementById('dialog-tp4').showModal()" class="boton-accion">Ver TP
+                        4</button>
+
+                </div>
+                <div class="tarjeta">
+                    <img src="images/ram.webp" alt="Memoria RAM" class="redondeada">
+                    <h3>Memoria RAM</h3>
+                    <p>Capacidad: 16.0 GB instalada (15.8 GB utilizable)</p>
+                </div>
+                <div class="tarjeta">
+                    <img src="images/3050.png" alt="Tarjeta Gráfica" class="redondeada">
+                    <h3>Tarjeta Gráfica (GPU)</h3>
+                    <p>Modelo: RTX 3050 MSI 6GB</p>
+                </div>
+
+                <div class="tarjeta">
+                    <img src="images/ssd.webp" alt="Unidad de Estado Sólido SSD" class="redondeada">
+                    <h3>Almacenamiento</h3>
+                    <p>Tipo: SSD NVMe M.2</p>
+                </div>
+
+                <div class="tarjeta">
+                    <img src="images/fuente.png" alt="Fuente de Alimentación" class="redondeada">
+                    <h3>Fuente de Alimentación (PSU)</h3>
+                    <p>Potencia: 450W</p>
+                </div>
+
+                <div class="tarjeta">
+                    <img src="images/cooler.webp" alt="Sistema de refrigeración del CPU" class="redondeada">
+                    <h3>Sistema de Refrigeración</h3>
+                    <p>Tipo: Disipador por aire</p>
+                </div>
+
+                <div class="tarjeta">
+                    <img src="images/gabinete.png" alt="Gabinete de la PC" class="redondeada">
+                    <h3>Gabinete Kolink Void</h3>
+                    <p>Formato: Mid Tower ATX</p>
+                </div>
+
+            </div>
+        </section>
+        <section id="perifericos">
+            <h2>Periféricos y Dispositivos E/S</h2>
+            <p>Interfaces físicas de comunicación con el usuario.</p>
+
+            <div class="galeria-grid">
+                <div class="tarjeta">
+                    <img src="images/monitor.png" alt="Monitor" class="redondeada">
+                    <h3>Monitor (Salida)</h3>
+                    <p>Resolución: 1920x1080 (Full HD) a 60Hz</p>
+                </div>
+
+                <div class="tarjeta">
+                    <img src="images/kit.png" alt="Kit Teclado y Mouse" class="redondeada">
+                    <h3>Teclado y Mouse (Entrada)</h3>
+                    <p>Conectividad: USB</p>
+                    <p>Aclaracion: Los auriculares no son los que estan en la foto, el teclado y el mouse si</p>
+                </div>
+
+                <div class="tarjeta">
+                    <img src="images/auriculares.png" alt="Auriculares inalámbricos" class="redondeada">
+                    <h3>Auriculares (Salida/Entrada)</h3>
+                    <p>Modelo: AKG K77 Perception</p>
+                    <p>Conectividad: Cableada (Jack 3.5mm)</p>
+                </div>
+            </div>
+
+            <div
+                style="text-align: center; margin-top: 40px; padding: 25px; background-color: #161b27; border: 1px solid #1e2740; border-radius: 8px;">
+                <h3>Base de Datos de Conocimiento</h3>
+                <p>Acceso al informe técnico sobre funcionamiento de componentes, arquitectura de buses y resolución de
+                    cuellos de botella (Bottlenecks).</p>
+                <br>
+                <a href="LINK_A_TU_GOOGLE_DOC_TEORICO" target="_blank" class="boton-accion"
+                    style="text-decoration: none;">
+                    Leer Informe Completo de Arquitectura
+                </a>
+            </div>
+        </section>
+
+
+        <section id="presupuestos">
+            <h2>Armado de Equipos (Presupuestos)</h2>
+            <p>Documentación técnica de presupuestos redactada bajo normas APA.</p>
+
+            <div class="galeria-grid">
+
+                <div class="tarjeta">
+                    <h3>PC Gaming (Presupuesto Libre)</h3>
+                    <p>Enfoque en máximo rendimiento gráfico y sistemas de refrigeración avanzados.</p>
+                    <a href="LINK_DOC_GAMING" target="_blank" class="boton-accion">Ver Informe APA</a>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>PC Oficina (Presupuesto Limitado)</h3>
+                    <p>Enfoque en ofimática, durabilidad y mejor relación costo-beneficio.</p>
+                    <a href="LINK_DOC_OFICINA" target="_blank" class="boton-accion">Ver Informe APA</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="mantenimiento">
+            <h2>Mantenimiento y Laboratorio</h2>
+            <div class="galeria-grid">
+                <div class="tarjeta">
+                    <h3>Ficha Técnica Final</h3>
+                    <p>Mantenimiento preventivo y correctivo de una PC funcional del laboratorio.</p>
+                    <a href="LINK_FICHA_MANTENIMIENTO" target="_blank" class="boton-accion">Ver Ficha Técnica Final</a>
+                </div>
+                <div class="tarjeta">
+                    <img src="images/soldadura.jpg" alt="Práctica de soldadura de componentes electrónicos"
+                        class="redondeada">
+                    <h3>Soldadura y Desoldadura</h3>
+                    <p>Recuperación de componentes electrónicos y reparación de pistas en placas de descarte.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="arduino">
+            <h2>Proyectos Arduino e IoT</h2>
+            <p>Aplicación práctica de programación en C++ y electrónica para resolver problemas del mundo real.</p>
+
+            <div class="galeria-grid">
+                <div class="tarjeta">
+                    <img src="images/lentes_ciegos.jpg" alt="Prototipo de lentes para ciegos con sensor ultrasónico"
+                        class="redondeada">
+                    <h3>Lentes Asistenciales</h3>
+                    <p>Hardware: Microcontrolador ESP32, Sensor Ultrasónico, Buzzer.</p>
+                    <p>Lógica: Detección de proximidad y emisión de alertas sonoras.</p>
+                    <a href="LINK_AL_CODIGO_O_INFORME" target="_blank" class="boton-accion">Ver Código y Circuito</a>
+                </div>
+
+                <div class="tarjeta">
+                    <img src="images/basurero.jpg" alt="Basurero automatizado con Arduino" class="redondeada">
+                    <h3>Basurero Inteligente</h3>
+                    <p>Hardware: Placa Arduino, Servomotor, Sensor de Proximidad.</p>
+                    <p>Lógica: Apertura automática del contenedor mediante detección de movimiento.</p>
+                    <a href="LINK_AL_CODIGO_O_INFORME" target="_blank" class="boton-accion">Ver Código y Circuito</a>
+                </div>
+            </div>
+        </section>
+
+        <dialog id="modal-info">
+            <h3>Layout de Placa Madre ASUS A320M-K PRIME</h3>
+            <img src="images/manual_layout.webp" alt="Esquema del manual de ASUS B560" class="redondeada"
+                style="width: 100%; height: auto;">
+            <p>El zócalo AM4 aloja el procesador compatible con la placa madre ASUS A320M-K. Se observan las ranuras
+                DIMM para los 16 GB de memoria RAM instalada, con soporte para módulos DDR4.</p>
+            <button id="btn-cerrar" class="boton-accion">Cerrar Explicación</button>
+        </dialog>
+        <dialog id="modal-hardware">
+
+            <h2>ASRock X870 Pro RS – Arquitectura de Placa Base</h2>
+
+            <h3>1. Factores de Forma</h3>
+            <p>ATX (305x244 mm): mayor expansión y mejor disipación.</p>
+            <p>Micro-ATX: menor tamaño, menos slots.</p>
+            <p>Mini-ITX: compacto, limitado.</p>
+            <img src="images/tamanos.png" alt="Comparación de factores de forma de placas base" class="redondeada"
+                style="width: 100%; height: auto;">
+            <h3>2. Socket</h3>
+            <p>AM5 (LGA): pines en la placa, mayor precisión eléctrica.</p>
+            <p>PGA: pines en el CPU, más frágil.</p>
+            <img src="images/socket.medium" alt="Comparación de sockets LGA y PGA" class="redondeada"
+                style="width: 100%; height: auto;">
+            <h3>3. VRM</h3>
+            <p>Convierte 12V en voltajes utilizables por el CPU.</p>
+            <ul>
+                <li>MOSFETs: conmutación</li>
+                <li>Chokes: estabilización</li>
+                <li>Capacitores: filtrado</li>
+            </ul>
+            <img src="images/vrm.png" alt="Diagrama de un VRM con sus componentes" class="redondeada"
+                style="width: 100%; height: auto;">
+            <h3>4. Chipset X870</h3>
+            <p>Gestiona comunicación entre CPU, RAM y periféricos.</p>
+            <img src="images/chipset.jpg" alt="Diagrama de chipset y sus conexiones" class="redondeada"
+                style="width: 100%; height: auto;">
+            <h3>5. Buses</h3>
+            <p>PCIe x16 (GPU), x4 (SSD), x1 (expansión).</p>
+            <p>M.2 NVMe: almacenamiento de alta velocidad.</p>
+            <img src="images/buses.jpg" alt="Esquema de buses PCIe y M.2 en una placa base" class="redondeada"
+                style="width: 100%; height: auto;">
+            <h3>6. Conexiones</h3>
+            <ul>
+                <li>ATX 24 pines: energía</li>
+                <li>EPS 8 pines: CPU</li>
+                <li>F_PANEL: botones gabinete</li>
+                <li>CPU_FAN / SYS_FAN: ventiladores</li>
+                <li>SATA: almacenamiento</li>
+                <li>USB headers: puertos frontales</li>
+                <li>F_AUDIO: audio frontal</li>
+            </ul>
+            <br <img src="images/conexiones.png" alt="Diagrama de conexiones comunes en una placa base"
+                class="redondeada" style="width: 100%; height: auto;">
+            <a style="text-decoration: none;"
+                href="https://docs.google.com/document/d/14h2cgyDjwdRSSHG8GHWnSgMQRL9p-Ms63KVLJyjrEO8/edit?usp=sharing"
+                target="_blank" class="boton-accion">Ver Documento Completo</a>
+            <button onclick="document.getElementById('modal-hardware').close()" class="boton-accion">
+                Cerrar
+            </button>
+
+        </dialog>
+        <!-- DIALOG -->
+        <dialog id="dialog-tp4">
+
+            <div class="dialog-header">
+                <div>
+                    <p class="dialog-subtitulo">TP 4 · Informática 5to año</p>
+                    <h2 class="dialog-titulo">CPU y Refrigeración</h2>
+                </div>
+                <button onclick="document.getElementById('dialog-tp4').close()" class="dialog-cerrar">✕ Cerrar</button>
+            </div>
+
+            <p class="dialog-seccion">Procesador de referencia</p>
+            <div class="dialog-grid">
+                <div class="chip">
+                    <p class="chip-label">Modelo</p>
+                    <p class="chip-val">Ryzen 7 9800X3D</p>
+                </div>
+                <div class="chip">
+                    <p class="chip-label">Arquitectura</p>
+                    <p class="chip-val">Zen 5 · AMD64</p>
+                </div>
+                <div class="chip">
+                    <p class="chip-label">Núcleos / Hilos</p>
+                    <p class="chip-val">8C / 16T (SMT)</p>
+                </div>
+                <div class="chip">
+                    <p class="chip-label">Boost máx.</p>
+                    <p class="chip-val">~5.2 GHz</p>
+                </div>
+            </div>
+
+            <hr class="dialog-divider">
+
+            <p class="dialog-seccion">Conceptos clave del CPU</p>
+            <div class="dialog-lista">
+                <div class="dialog-item"><span class="item-titulo">Núcleo (Core)</span><span class="item-desc"> — unidad
+                        física que ejecuta instrucciones de forma independiente.</span></div>
+                <div class="dialog-item"><span class="item-titulo">Hilo (Thread)</span><span class="item-desc"> — unidad
+                        lógica: un núcleo atiende dos hilos con SMT / Hyper-Threading.</span></div>
+                <div class="dialog-item"><span class="item-titulo">IPC</span><span class="item-desc"> — instrucciones
+                        por ciclo; un CPU moderno a 3 GHz puede superar a uno viejo a 4 GHz.</span></div>
+                <div class="dialog-item"><span class="item-titulo">Frecuencia Base / Boost</span><span
+                        class="item-desc"> — velocidad mínima garantizada vs. pico temporal bajo condiciones
+                        ideales.</span></div>
+                <div class="dialog-item"><span class="item-titulo">3D V-Cache</span><span class="item-desc"> — caché L3
+                        apilada verticalmente; reduce latencia y mejora FPS en juegos.</span></div>
+            </div>
+
+            <hr class="dialog-divider">
+
+            <p class="dialog-seccion">Caché y jerarquía de memoria</p>
+            <div class="dialog-grid">
+                <div class="chip">
+                    <p class="chip-label">L1</p>
+                    <p class="chip-val">Muy rápida · muy pequeña</p>
+                </div>
+                <div class="chip">
+                    <p class="chip-label">L2</p>
+                    <p class="chip-val">Intermedia</p>
+                </div>
+                <div class="chip chip-full">
+                    <p class="chip-label">L3 + 3D V-Cache</p>
+                    <p class="chip-val">Grande · compartida · apilada verticalmente en el 9800X3D</p>
+                </div>
+            </div>
+
+            <hr class="dialog-divider">
+
+            <p class="dialog-seccion">Sistemas de refrigeración</p>
+            <div class="dialog-lista">
+                <div class="dialog-item"><span class="item-titulo">Disipador por aire</span><span class="item-desc"> —
+                        heatsink + ventiladores expulsan el calor del CPU.</span></div>
+                <div class="dialog-item"><span class="item-titulo">Heat Pipes</span><span class="item-desc"> — tubos de
+                        cobre sellados; el líquido se evapora y condensa transfiriendo calor muy rápido.</span></div>
+                <div class="dialog-item"><span class="item-titulo">AIO (Refrigeración líquida)</span><span
+                        class="item-desc"> — bloque + bomba + radiador + mangueras; ideal para overclocking y alto
+                        consumo.</span></div>
+                <div class="dialog-item"><span class="item-titulo">Pasta térmica</span><span class="item-desc"> —
+                        rellena imperfecciones microscópicas; sin ella el CPU se sobrecalienta y daña.</span></div>
+            </div>
+
+            <hr class="dialog-divider">
+
+            <p class="dialog-seccion">Límites del hardware</p>
+            <div class="dialog-alerta">
+                <p class="alerta-titulo">Thermal Throttling</p>
+                <p class="alerta-desc">Cuando la temperatura supera el límite, el CPU reduce frecuencia y voltaje
+                    automáticamente — caen el rendimiento y los FPS.</p>
+            </div>
+            <div class="dialog-badges">
+                <span class="badge">Overclocking → mayor rendimiento · mayor riesgo</span>
+                <span class="badge">Undervolting → menor temp · mismo rendimiento</span>
+            </div>
+
+        </dialog>
+    </main>
+
+    <footer>
+        <p>Desarrollado con HTML, CSS y JS puro.</p>
+        &copy; 2026 Santino Awada
+    </footer>
+    <script src="scripts/main.js">
+    </script>
+</body>
+
+</html>
