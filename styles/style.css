@@ -1,0 +1,533 @@
+/* ============================================
+   PORTAFOLIO - SANTINO AWADA
+   Versión simple, sin efectos avanzados
+   ============================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    transition: all 0.3s ease;
+    font-family: 'DM Sans', sans-serif;
+    background-color: #0f1117;
+    color: #e2e8f0;
+    margin: 0;
+}
+
+/* ── NAV ────────────────────────────────── */
+nav {
+    background-color: #161b27;
+    padding: 0 40px;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid #1e2740;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* ← distribuye botón | links | espacio */
+}
+
+nav ul {
+    position: absolute;  /* ← lo saca del flujo */
+    left: 50%;
+    transform: translateX(-50%);  /* ← centrado perfecto */
+    
+    list-style: none;
+    display: flex;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+}
+nav a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 6px 14px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffffff;
+    background-color: #fa8072;
+}
+
+/* ── MAIN ───────────────────────────────── */
+main {
+    max-width: 70%;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+/* ── SECCIONES ──────────────────────────── */
+section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    min-height: 80vh;
+    border-bottom: 1px solid #1e2740;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* ── INICIO: alineado a la izquierda ── */
+#inicio {
+    align-items: flex-start;
+}
+
+#inicio h1 {
+    line-height: 1;
+    margin-bottom: 24px;
+}
+
+#inicio p {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    border-left: 35px solid #fa8072;  /* tamaño base */
+    border-radius: 29px;
+    padding-left: 12px;
+    transition: border-left-width 0.3s ease;
+}
+
+#inicio p:hover {
+    border-left-width: 55px;
+}
+
+/* ── HARDWARE: alineado a la derecha ── */
+#componentes {
+    align-items: flex-end;
+    text-align: right;
+}
+
+#componentes h2 {
+    font-size: 2rem;
+    color: #e2e8f0;
+    margin-bottom: 20px;
+}
+
+#componentes button{
+    color: #fa8072;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px solid #fa8072;
+    padding: 10px 20px;
+    border-radius: 6px;
+}
+
+#componentes button:hover{
+    background-color: #fa8072;
+    color: #0f1117;
+}
+
+#componentes > a {
+    color: #fa8072;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px solid #fa8072;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 6px;
+    margin-bottom: 40px; /* Separa el botón de la galería */
+}
+
+#componentes > a:hover {
+    background-color: #fa8072;
+    color: #0f1117;
+}
+
+.diagn {
+    font-size: 2.5rem;
+    font-family: 'Playfair Display', serif;
+}
+
+/* ── GALERÍA DE TARJETAS ────────────────── */
+.galeria-grid {
+    display: grid; /* CSS Grid: divide el espacio en columnas */
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); /* Columnas que se adaptan al ancho disponible */
+    gap: 30px;
+    margin-top: 30px;
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    text-align: left; /* Resetea el text-align: right de la sección */
+}
+
+.tarjeta {
+    background-color: #161b27;
+    border: 1px solid #1e2740;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+    padding: 16px;          /* ← esto es lo que faltaba para el texto */
+    box-sizing: border-box;
+    overflow: hidden;       /* evita que cualquier contenido se escape */
+}
+
+.tarjeta:hover {
+    transform: translateY(-10px);
+    border-color: #fa8072; /* Borde salmón al pasar el mouse */
+    
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 200px;          /* altura fija y predecible */
+    object-fit: contain;    /* muestra la imagen completa sin recortar */
+    border-radius: 5px;
+    padding: 12px;          /* separa la imagen de los bordes */
+    box-sizing: border-box;
+}
+
+.tarjeta h3 {
+    color: #fa8072;
+}
+
+.tarjeta p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.tarjeta:not(:has(img)) {
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tarjeta:not(:has(img))::before {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: #1e2740;
+    border: 2px dashed #fa8072;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.boton-accion {
+    background-color: transparent;
+    color: #fa8072;
+    border: 2px solid #fa8072;
+    padding: 8px 16px;
+    border-radius: 7px;
+    cursor: pointer; /* El cursor se convierte en una mano al pasar por encima */
+    font-family: 'DM Sans', sans-serif;
+    font-weight: bold;
+    font-size: 0.9rem;
+    width: auto; /* Cambia de width: 100% a auto para que no ocupe todo el ancho */
+    margin-top: 10px; /* Agrega espacio superior para separar del botón anterior */
+}
+/* ...existing code... */
+
+
+.boton-accion:hover {
+    background-color: #fa8072;
+    color: #0f1117;
+}
+
+/* ── FOOTER ─────────────────────────────── */
+footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 0.8rem;
+    color: #64748b;
+    border-top: 1px solid #1e2740;
+}
+
+/* ── TÍTULOS INICIO ─────────────────────── */
+#titulo-principal {
+    display: block;
+    color: #fa8072;
+    font-size: 9rem;
+    font-weight: bold;
+}
+
+#titulo-secundario {
+    font-family: 'Playfair Display', serif;
+    display: block;
+    color: #d0d9eb;
+    font-size: 4.4rem;
+    font-weight: normal;
+}
+
+dialog {
+    background-color: #161b27;
+    color: #e2e8f0;
+    
+    border: none; /* Quita el borde por defecto */
+    border-radius: 10px; /* Redondea la ventana */
+    padding: 25px; /* Espacio interno de la ventana */
+    max-width: 500px; /* Ancho máximo en pantallas grandes */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3); /* Sombra pronunciada para destacar */
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.7); /* Oscurece el fondo de la página al abrirse */
+}
+
+
+.boton-accion {
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.boton-accion:hover {
+    transform: scale(1.05); /* El botón "late" o crece un 5% */
+}
+
+@media screen and (max-width: 600px) {
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.2rem;
+    }
+    dialog {
+        padding: 15px;
+        width: 95%;
+    }
+}
+
+.interruptor-tema {  
+    margin-right: 20px; /* ← lo empuja al extremo izquierdo */    
+    background: transparent; /* Fondo invisible */
+    border: none; /* Sin borde */
+    font-size: 2rem; /* Tamaño grande para la silueta */
+    color: #e2e8f0; /* Color gris oscuro inicial */
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.interruptor-tema:hover {
+    transform: scale(1.1) rotate(6.7deg); 
+}
+body.modo-oscuro {
+    background-color: #161b27; /* Fondo azul noche profundo */
+    color: #e2e8f0; /* Texto gris claro */
+}
+
+/* Invertimos el color del botón flotante para que se vea en la oscuridad */
+body.modo-oscuro .interruptor-tema {
+    color: #eab308; /* Lo pintamos de amarillo */
+}
+
+body.modo-oscuro nav {
+    background-color: #1b2536; /* Azul noche más oscuro para el nav */
+    border-bottom: 1px solid #334155; /* Borde más suave */
+}
+
+/* Oscurecemos el fondo de las tarjetas de hardware */
+body.modo-oscuro .tarjeta {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    color: #f8fafc;
+}
+
+/* Oscurecemos la ventana modal (dialog) */
+body.modo-oscuro dialog {
+    background-color: #1e293b;
+    color: #f8fafc;
+}
+
+/* Ajustamos el color de los enlaces generales en modo oscuro */
+body.modo-oscuro a {
+    color: #e2e8f0;
+}
+
+.caja-destacada {
+    text-align: center; 
+    margin-top: 40px; 
+    padding: 25px; 
+    background-color: #161b27; /* Color gris clarito elegante para el modo día */
+    border-radius: 8px; /* Bordes redondeados acordes al resto del sitio */
+    border: 1px solid #1e2740; /* Borde sutil para destacar sin ser demasiado llamativo */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave para el cambio de tema */
+}
+
+/* Regla para que la caja se oscurezca cuando activamos el Modo Oscuro */
+body.modo-oscuro .caja-destacada {
+    border: 1px solid #1e2740; /* Borde sutil para destacar sin ser demasiado llamativo */
+    background-color: #1b2536; /* Fondo azul noche profundo */
+}
+
+.redondeada {
+    border-radius: 8px;
+}
+
+/* ── DIALOG TP4 ─────────────────────────── */
+#dialog-tp4 {
+    max-width: 580px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #fa8072 #1e2740;
+}
+
+#dialog-tp4::-webkit-scrollbar { width: 6px; }
+#dialog-tp4::-webkit-scrollbar-track { background: #1e2740; border-radius: 3px; }
+#dialog-tp4::-webkit-scrollbar-thumb { background: #fa8072; border-radius: 3px; }
+
+.dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    gap: 12px;
+}
+
+.dialog-subtitulo {
+    color: #fa8072;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 6px 0;
+}
+
+.dialog-titulo {
+    color: #e2e8f0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.dialog-cerrar {
+    background: transparent;
+    border: 1px solid #1e2740;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-family: 'DM Sans', sans-serif;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.dialog-cerrar:hover {
+    color: #fa8072;
+    border-color: #fa8072;
+}
+
+.dialog-seccion {
+    color: #fa8072;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 0 10px 0;
+}
+
+.dialog-divider {
+    border: none;
+    border-top: 1px solid #1e2740;
+    margin: 22px 0;
+}
+
+.dialog-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 22px;
+}
+
+.chip {
+    background: #0f1117;
+    border: 1px solid #1e2740;
+    border-radius: 8px;
+    padding: 10px 14px;
+}
+
+.chip-full {
+    grid-column: span 2;
+}
+
+.chip-label {
+    color: #64748b;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 3px 0;
+}
+
+.chip-val {
+    color: #e2e8f0;
+    font-size: 0.88rem;
+    margin: 0;
+}
+
+.dialog-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 22px;
+}
+
+.dialog-item {
+    background: #0f1117;
+    border: 1px solid #1e2740;
+    border-radius: 8px;
+    padding: 10px 14px;
+}
+
+.item-titulo {
+    color: #e2e8f0;
+    font-weight: 600;
+    font-size: 0.88rem;
+}
+
+.item-desc {
+    color: #94a3b8;
+    font-size: 0.88rem;
+}
+
+.dialog-alerta {
+    background: rgba(250, 128, 114, 0.07);
+    border-left: 3px solid #fa8072;
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+}
+
+.alerta-titulo {
+    color: #fa8072;
+    font-weight: 600;
+    font-size: 0.88rem;
+    margin: 0 0 4px 0;
+}
+
+.alerta-desc {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.dialog-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.badge {
+    background: rgba(250, 128, 114, 0.1);
+    border: 1px solid rgba(250, 128, 114, 0.3);
+    color: #fa8072;
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
