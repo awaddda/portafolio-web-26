@@ -167,13 +167,15 @@
         <h3 class="tarjeta-titulo">Trabajos Prácticos</h3>
 
         <div class="tarjeta-contenido">
-            <button onclick="document.getElementById('modal-hardware').showModal()" class="btn-ghost">
+            <a href="https://docs.google.com/document/d/1x3gTCo_zATUiMuUyVV_Qmm4ILt7iUMIhJ4UJjGCJ7MM/edit?usp=sharing"
+               target="_blank" class="btn-ghost">
                 TP 3 — Arquitectura de Placa Base
-            </button>
+            </a>
 
-            <button onclick="document.getElementById('dialog-tp4').showModal()" class="btn-ghost">
+            <a href="https://docs.google.com/document/d/1lcSYQJobuoliBj2XlyB6rshgYvCthubR1uOrLAryaLQ/edit?usp=sharing"
+               target="_blank" class="btn-ghost">
                 TP 4 — CPU y Refrigeración
-            </button>
+            </a>
 
             <a href="https://docs.google.com/document/d/164ZEwJW0IJcwIPcSm1gTPdayiGJGkwZD5K02Eo_jO8I/edit?usp=sharing"
                target="_blank" class="btn-ghost">
@@ -370,179 +372,6 @@
             <p class="footer-copy">Desarrollado con HTML, CSS y JS puro · © 2026</p>
         </div>
     </footer>
-
-    <!-- ── MODALS ── -->
-    <dialog id="modal-info">
-        <div class="dialog-header">
-            <div>
-                <p class="dialog-subtitulo">TP 2 · Placa Madre</p>
-                <h2 class="dialog-titulo">Layout ASUS A320M-K PRIME</h2>
-            </div>
-            <button id="btn-cerrar" class="dialog-cerrar">✕</button>
-        </div>
-        <img src="images/manual_layout.webp" alt="Layout ASUS A320M-K"
-            style="width:100%;border-radius:12px;margin:16px 0;">
-        <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.6;">El zócalo AM4 aloja el procesador. Las
-            ranuras DIMM alojan los 16 GB de RAM DDR4 instalada.</p>
-        <button id="btn-cerrar" class="btn-primary" style="margin-top:16px;"
-            onclick="document.getElementById('modal-info').close()">Cerrar</button>
-    </dialog>
-
-    <dialog id="modal-hardware">
-        <div class="dialog-header">
-            <div>
-                <p class="dialog-subtitulo">TP 3 · Arquitectura</p>
-                <h2 class="dialog-titulo">Placa Base ASRock X870 Pro RS</h2>
-            </div>
-            <button onclick="document.getElementById('modal-hardware').close()" class="dialog-cerrar">✕</button>
-        </div>
-
-        <div class="dialog-section-block">
-            <p class="dialog-seccion">1. Factores de Forma</p>
-            <p class="dialog-text">ATX (305×244 mm) mayor expansión y mejor disipación. Micro-ATX menor tamaño, menos
-                slots. Mini-ITX: compacto, limitado.</p>
-            <img src="images/tamanos.png" alt="Factores de forma" class="dialog-img">
-        </div>
-        <hr class="dialog-divider">
-        <div class="dialog-section-block">
-            <p class="dialog-seccion">2. Socket</p>
-            <p class="dialog-text">AM5 (LGA): pines en la placa, mayor precisión eléctrica. PGA: pines en el CPU, más
-                frágil.</p>
-            <img src="images/socket.medium" alt="Sockets" class="dialog-img">
-        </div>
-        <hr class="dialog-divider">
-        <div class="dialog-section-block">
-            <p class="dialog-seccion">3. VRM</p>
-            <p class="dialog-text">Convierte 12V en voltajes utilizables por el CPU.</p>
-            <ul class="dialog-list">
-                <li>MOSFETs: conmutación</li>
-                <li>Chokes: estabilización</li>
-                <li>Capacitores: filtrado</li>
-            </ul>
-            <img src="images/vrm.png" alt="VRM" class="dialog-img">
-        </div>
-        <hr class="dialog-divider">
-        <div class="dialog-section-block">
-            <p class="dialog-seccion">4. Chipset X870</p>
-            <p class="dialog-text">Gestiona comunicación entre CPU, RAM y periféricos.</p>
-            <img src="images/chipset.jpg" alt="Chipset" class="dialog-img">
-        </div>
-        <hr class="dialog-divider">
-        <div class="dialog-section-block">
-            <p class="dialog-seccion">5. Buses</p>
-            <p class="dialog-text">PCIe x16 (GPU), x4 (SSD), x1 (expansión). M.2 NVMe para almacenamiento de alta
-                velocidad.</p>
-            <img src="images/buses.jpg" alt="Buses" class="dialog-img">
-        </div>
-        <hr class="dialog-divider">
-        <div class="dialog-section-block">
-            <p class="dialog-seccion">6. Conexiones Internas</p>
-            <ul class="dialog-list">
-                <li>ATX 24 pines — energía</li>
-                <li>EPS 8 pines — CPU</li>
-                <li>F_PANEL — botones del gabinete</li>
-                <li>CPU_FAN / SYS_FAN — ventiladores</li>
-                <li>SATA — almacenamiento</li>
-                <li>USB headers — puertos frontales</li>
-                <li>F_AUDIO — audio frontal</li>
-            </ul>
-            <img src="images/conexiones.png" alt="Conexiones" class="dialog-img">
-        </div>
-
-        <div style="display:flex;gap:12px;margin-top:24px;flex-wrap:wrap;">
-            <a href="https://docs.google.com/document/d/14h2cgyDjwdRSSHG8GHWnSgMQRL9p-Ms63KVLJyjrEO8/edit?usp=sharing"
-                target="_blank" class="btn-primary">Ver Documento Completo →</a>
-            <button onclick="document.getElementById('modal-hardware').close()" class="btn-outline">Cerrar</button>
-        </div>
-    </dialog>
-
-    <!-- TP4 DIALOG -->
-    <dialog id="dialog-tp4">
-        <div class="dialog-header">
-            <div>
-                <p class="dialog-subtitulo">TP 4 · Informática 5to año</p>
-                <h2 class="dialog-titulo">CPU y Refrigeración</h2>
-            </div>
-            <button onclick="document.getElementById('dialog-tp4').close()" class="dialog-cerrar">✕</button>
-        </div>
-
-        <p class="dialog-seccion">Procesador de referencia</p>
-        <div class="dialog-grid">
-            <div class="chip">
-                <p class="chip-label">Modelo</p>
-                <p class="chip-val">Ryzen 7 9800X3D</p>
-            </div>
-            <div class="chip">
-                <p class="chip-label">Arquitectura</p>
-                <p class="chip-val">Zen 5 · AMD64</p>
-            </div>
-            <div class="chip">
-                <p class="chip-label">Núcleos / Hilos</p>
-                <p class="chip-val">8C / 16T (SMT)</p>
-            </div>
-            <div class="chip">
-                <p class="chip-label">Boost máx.</p>
-                <p class="chip-val">~5.2 GHz</p>
-            </div>
-        </div>
-
-        <hr class="dialog-divider">
-        <p class="dialog-seccion">Conceptos clave del CPU</p>
-        <div class="dialog-lista">
-            <div class="dialog-item"><span class="item-titulo">Núcleo (Core)</span><span class="item-desc"> — unidad
-                    física que ejecuta instrucciones de forma independiente.</span></div>
-            <div class="dialog-item"><span class="item-titulo">Hilo (Thread)</span><span class="item-desc"> — unidad
-                    lógica: un núcleo atiende dos hilos con SMT / Hyper-Threading.</span></div>
-            <div class="dialog-item"><span class="item-titulo">IPC</span><span class="item-desc"> — instrucciones por
-                    ciclo; un CPU moderno a 3 GHz puede superar a uno viejo a 4 GHz.</span></div>
-            <div class="dialog-item"><span class="item-titulo">Frecuencia Base / Boost</span><span class="item-desc"> —
-                    velocidad mínima garantizada vs. pico temporal.</span></div>
-            <div class="dialog-item"><span class="item-titulo">3D V-Cache</span><span class="item-desc"> — caché L3
-                    apilada verticalmente; reduce latencia y mejora FPS.</span></div>
-        </div>
-
-        <hr class="dialog-divider">
-        <p class="dialog-seccion">Caché y jerarquía</p>
-        <div class="dialog-grid">
-            <div class="chip">
-                <p class="chip-label">L1</p>
-                <p class="chip-val">Muy rápida · muy pequeña</p>
-            </div>
-            <div class="chip">
-                <p class="chip-label">L2</p>
-                <p class="chip-val">Intermedia</p>
-            </div>
-            <div class="chip chip-full">
-                <p class="chip-label">L3 + 3D V-Cache</p>
-                <p class="chip-val">Grande · compartida · apilada verticalmente en el 9800X3D</p>
-            </div>
-        </div>
-
-        <hr class="dialog-divider">
-        <p class="dialog-seccion">Sistemas de refrigeración</p>
-        <div class="dialog-lista">
-            <div class="dialog-item"><span class="item-titulo">Disipador por aire</span><span class="item-desc"> —
-                    heatsink + ventiladores expulsan calor del CPU.</span></div>
-            <div class="dialog-item"><span class="item-titulo">Heat Pipes</span><span class="item-desc"> — tubos de
-                    cobre sellados; el líquido se evapora y condensa transfiriendo calor muy rápido.</span></div>
-            <div class="dialog-item"><span class="item-titulo">AIO (Refrigeración líquida)</span><span
-                    class="item-desc"> — bloque + bomba + radiador + mangueras; ideal para overclocking.</span></div>
-            <div class="dialog-item"><span class="item-titulo">Pasta térmica</span><span class="item-desc"> — rellena
-                    imperfecciones microscópicas; sin ella el CPU se sobrecalienta.</span></div>
-        </div>
-
-        <hr class="dialog-divider">
-        <p class="dialog-seccion">Límites del hardware</p>
-        <div class="dialog-alerta">
-            <p class="alerta-titulo">Thermal Throttling</p>
-            <p class="alerta-desc">Cuando la temperatura supera el límite, el CPU reduce frecuencia y voltaje — caen el
-                rendimiento y los FPS.</p>
-        </div>
-        <div class="dialog-badges">
-            <span class="badge">Overclocking → mayor rendimiento · mayor riesgo</span>
-            <span class="badge">Undervolting → menor temp · mismo rendimiento</span>
-        </div>
-    </dialog>
 
     <script src="scripts/main.js"></script>
 </body>
