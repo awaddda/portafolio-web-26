@@ -79,3 +79,29 @@ const sectionObserver = new IntersectionObserver(
 );
 
 sections.forEach(s => sectionObserver.observe(s));
+
+// ── Modales de presupuesto ──
+function abrirModal(id) {
+    const overlay = document.getElementById(id);
+    if (!overlay) return;
+    overlay.classList.add('activo');
+    document.body.style.overflow = 'hidden';
+    // Cerrar con Escape
+    overlay._onKeyDown = (e) => { if (e.key === 'Escape') cerrarModal(id); };
+    document.addEventListener('keydown', overlay._onKeyDown);
+}
+
+function cerrarModal(id) {
+    const overlay = document.getElementById(id);
+    if (!overlay) return;
+    overlay.classList.remove('activo');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', overlay._onKeyDown);
+}
+
+// Cerrar al hacer click fuera del panel
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) cerrarModal(overlay.id);
+    });
+});
