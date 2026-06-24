@@ -196,7 +196,6 @@
                target="_blank" class="btn-ghost">
                 TP 8 — Periféricos y Dispositivos E/S
             </a>
-        </div>
     </div>
 </div>
 
@@ -252,42 +251,254 @@
                 <h3 class="caja-titulo">Base de Datos de Conocimiento</h3>
                 <p class="caja-desc">Informe sobre arquitectura de buses, funcionamiento de componentes y resolución de
                     cuellos de botella (Bottlenecks).</p>
-                <a href="LINK_A_TU_GOOGLE_DOC_TEORICO" target="_blank" class="btn-primary">
+            <!-- <a href="LINK_A_TU_GOOGLE_DOC_TEORICO" target="_blank" class="btn-primary">
                     Leer Informe Completo →
-                </a>
+                </a> -->
             </div>
         </section>
 
-        <!-- ── PRESUPUESTOS ── -->
-        <section id="presupuestos">
-            <div class="section-header reveal">
-                <p class="section-eyebrow">Armado de Equipos</p>
-                <h2 class="section-title">Presupuestos</h2>
-                <p class="section-sub">Documentación técnica redactada bajo normas APA.</p>
-            </div>
+<!-- ── PRESUPUESTOS ── -->
+<section id="presupuestos">
+    <div class="section-header reveal">
+        <p class="section-eyebrow">Armado de Equipos</p>
+        <h2 class="section-title">Presupuestos</h2>
+        <p class="section-sub">Documentación técnica redactada bajo normas APA.</p>
+    </div>
 
-            <div class="galeria-grid col-2">
-                <div class="tarjeta tarjeta-wide reveal">
-                    <div class="tarjeta-body tarjeta-body-pad">
-                        <div class="tarjeta-icon">🎮</div>
-                        <p class="tarjeta-label">Presupuesto Libre</p>
-                        <h3 class="tarjeta-titulo">PC Gaming</h3>
-                        <p class="tarjeta-spec">Máximo rendimiento gráfico y sistemas de refrigeración avanzados.</p>
-                        <a href="LINK_DOC_GAMING" target="_blank" class="btn-ghost mt">Ver Informe APA →</a>
-                    </div>
-                </div>
-
-                <div class="tarjeta tarjeta-wide reveal delay-1">
-                    <div class="tarjeta-body tarjeta-body-pad">
-                        <div class="tarjeta-icon">💼</div>
-                        <p class="tarjeta-label">Presupuesto Limitado</p>
-                        <h3 class="tarjeta-titulo">PC Oficina</h3>
-                        <p class="tarjeta-spec">Ofimática, durabilidad y mejor relación costo-beneficio.</p>
-                        <a href="LINK_DOC_OFICINA" target="_blank" class="btn-ghost mt">Ver Informe APA →</a>
-                    </div>
-                </div>
+    <div class="galeria-grid col-2">
+        <div class="tarjeta tarjeta-wide reveal">
+            <div class="tarjeta-body tarjeta-body-pad">
+                <div class="tarjeta-icon">💼</div>
+                <p class="tarjeta-label">Presupuesto Limitado</p>
+                <h3 class="tarjeta-titulo">PC Oficina</h3>
+                <p class="tarjeta-spec">Ofimática, durabilidad y mejor relación costo-beneficio.</p>
+                <button class="btn-ghost mt" onclick="abrirModal('modal-bajo')">Ver Presupuesto →</button>
             </div>
-        </section>
+        </div>
+
+        <div class="tarjeta tarjeta-wide reveal delay-1">
+            <div class="tarjeta-body tarjeta-body-pad">
+                <div class="tarjeta-icon">🎮</div>
+                <p class="tarjeta-label">Presupuesto Libre</p>
+                <h3 class="tarjeta-titulo">PC Gaming</h3>
+                <p class="tarjeta-spec">Máximo rendimiento gráfico y sistemas de refrigeración avanzados.</p>
+                <button class="btn-ghost mt" onclick="abrirModal('modal-alto')">Ver Presupuesto →</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── MODAL: Bajo presupuesto ── -->
+<div class="modal-overlay" id="modal-bajo" role="dialog" aria-modal="true" aria-labelledby="modal-bajo-titulo">
+    <div class="modal-panel">
+        <button class="modal-close" onclick="cerrarModal('modal-bajo')" aria-label="Cerrar">✕</button>
+        <div class="modal-header">
+            <span class="modal-badge">Presupuesto Limitado</span>
+            <h2 class="modal-titulo" id="modal-bajo-titulo">PC Oficina</h2>
+            <p class="modal-sub">Ofimática · Durabilidad · Costo-beneficio</p>
+        </div>
+        <ul class="modal-lista">
+            <li>
+                <span class="modal-qty">×1</span>
+                <div>
+                    <strong>AMD Ryzen 5 5600GT</strong>
+                    <span>4.6 GHz Turbo · AM4 · Wraith Stealth Cooler incluido</span>
+                </div>
+            </li>
+            <li>
+                <span class="modal-qty">×1</span>
+                <div>
+                    <strong>ASUS PRIME B550M-K ARGB</strong>
+                    <span>Motherboard DDR4</span>
+                </div>
+            </li>
+            <li>
+                <span class="modal-qty">×1</span>
+                <div>
+                    <strong>Cooler CPU</strong>
+                    <span>Wraith Stealth incluido con el procesador</span>
+                </div>
+            </li>
+            <li>
+                <span class="modal-qty">×1</span>
+                <div>
+                    <strong>SSD Team T-Force Vulcan Z 1 TB</strong>
+                    <span>550 MB/s · SATA</span>
+                </div>
+            </li>
+            <li>
+                <span class="modal-qty">×1</span>
+                <div>
+                    <strong>Fuente Antec 650W 80 Plus Bronze</strong>
+                    <span>ATX 3.1 · PCIe 5.1 · CSK650DC AR</span>
+                </div>
+            </li>
+            <li>
+                <span class="modal-qty">×1</span>
+                <div>
+                    <strong>Gabinete KIT Spartan A1</strong>
+                    <span>Incluye fuente, teclado y mouse de regalo</span>
+                </div>
+            </li>
+            <li>
+                <span class="modal-qty">×1</span>
+                <div>
+                    <strong>Monitor ASUS VY229HF-J 22"</strong>
+                    <span>FHD · IPS · 100 Hz</span>
+                </div>
+            </li>
+            <li>
+                <span class="modal-qty">×1</span>
+                <div>
+                    <strong>Mouse Pad Razer Gigantus V2 Medium</strong>
+                    <span>360×275 mm</span>
+                </div>
+            </li>
+            <li>
+                <span class="modal-qty">×1</span>
+                <div>
+                    <strong>Armado básico de PC</strong>
+                    <span>No incluye instalación de sistema operativo</span>
+                </div>
+            </li>
+        </ul>
+        <div class="modal-footer">
+            <div class="modal-total">
+                <span class="modal-total-label">Total</span>
+                <span class="modal-total-valor">$ 899.733</span>
+            </div>
+            <a href="https://compragamer.com/armatupc?tipo=26&cpu=15739&paso=11&mother=18496&ccpu=2094&gab=18260&fuente=18257&perifericos=16645&hd=13867&monitores=16497"
+               target="_blank" class="btn-primary">Ver en CompraGamer →</a>
+        </div>
+    </div>
+</div>
+
+<!-- ── MODAL: Alto presupuesto ── -->
+<div class="modal-overlay" id="modal-alto" role="dialog" aria-modal="true" aria-labelledby="modal-alto-titulo">
+    <div class="modal-panel">
+        <button class="modal-close" onclick="cerrarModal('modal-alto')" aria-label="Cerrar">✕</button>
+        <div class="modal-header">
+            <span class="modal-badge modal-badge--gold">Presupuesto Libre</span>
+            <h2 class="modal-titulo" id="modal-alto-titulo">PC Gaming</h2>
+            <p class="modal-sub">Máximo rendimiento · Refrigeración avanzada · Dual monitor</p>
+        </div>
+        <ul class="modal-lista">
+            <li>
+                <span class="modal-qty">×1</span>
+                <div>
+                    <strong>AMD Ryzen 9 9950X</strong>
+                    <span>5.7 GHz Turbo · AM5 · Sin cooler incluido</span>
+                </div>
+            </li>
+            <li>
+                <span class="modal-qty">×1</span>
+                <div>
+                    <strong>ASUS PRIME B850M-K</strong>
+                    <span>AM5 · DDR5</span>
+                </div>
+            </li>
+            <li>
+                <span class="modal-qty">×1</span>
+                <div>
+                    <strong>ASUS ROG STRIX LC III 360</strong>
+                    <span>Cooler CPU AIO líquido</span>
+                </div>
+            </li>
+            <li>
+                <span class="modal-qty">×2</span>
+                <div>
+                    <strong>Adata XPG Lancer Blade DDR5 16 GB 5600 MHz</strong>
+                    <span>CL46 · Intel XMP 3.0 / AMD EXPO — Total: 32 GB</span>
+                </div>
+            </li>
+            <li>
+                <span class="modal-qty">×1</span>
+                <div>
+                    <strong>ASUS DUAL GeForce RTX 5060 Ti 8 GB GDDR7 OC</strong>
+                    <span>Placa de video</span>
+                </div>
+            </li>
+            <li>
+                <span class="modal-qty">×1</span>
+                <div>
+                    <strong>Samsung 990 EVO SSD M.2 2 TB</strong>
+                    <span>5000 MB/s · NVMe · PCIe Gen4×4 / Gen5×2</span>
+                </div>
+            </li>
+            <li>
+                <span class="modal-qty">×1</span>
+                <div>
+                    <strong>Antec HCG1200 PRO 1200 W 80 Plus Platinum</strong>
+                    <span>Full Modular · ATX 3.1 · PCIe 5.1</span>
+                </div>
+            </li>
+            <li>
+                <span class="modal-qty">×1</span>
+                <div>
+                    <strong>HYTE Y60 Panda</strong>
+                    <span>Vidrio templado · 3×120mm Flow FE12 Fans · Vertical GPU Mount · USB-C 3.2</span>
+                </div>
+            </li>
+            <li>
+                <span class="modal-qty">×1</span>
+                <div>
+                    <strong>Samsung Odyssey G5 G50SF 27" QD-OLED</strong>
+                    <span>QHD 1440p · 180 Hz · 0.03ms · G-SYNC · FreeSync Premium</span>
+                </div>
+            </li>
+            <li>
+                <span class="modal-qty">×1</span>
+                <div>
+                    <strong>ASUS TUF VG27AQL3A-J 27"</strong>
+                    <span>QHD 1440p · Fast IPS · 180 Hz · FreeSync · G-Sync Compatible</span>
+                </div>
+            </li>
+            <li>
+                <span class="modal-qty">×1</span>
+                <div>
+                    <strong>JBL Tour One Wireless</strong>
+                    <span>Bluetooth / 2.4 GHz · USB-C · 50 hs de batería</span>
+                </div>
+            </li>
+            <li>
+                <span class="modal-qty">×3</span>
+                <div>
+                    <strong>ID-Cooling AF-127-ARGB-K Black</strong>
+                    <span>Cooler Fan adicional</span>
+                </div>
+            </li>
+            <li>
+                <span class="modal-qty">×1</span>
+                <div>
+                    <strong>Logitech G502 Wireless</strong>
+                    <span>2.4 GHz LightSpeed · Hero 25K · 114 g · RGB · 60 hs</span>
+                </div>
+            </li>
+            <li>
+                <span class="modal-qty">×1</span>
+                <div>
+                    <strong>Corsair K65 MINI Mecánico 60%</strong>
+                    <span>Cherry MX Speed · RGB · iCUE · USB-C</span>
+                </div>
+            </li>
+            <li>
+                <span class="modal-qty">×1</span>
+                <div>
+                    <strong>Armado de PC</strong>
+                    <span>No incluye instalación de SO · Incluye service de cooler CPU</span>
+                </div>
+            </li>
+        </ul>
+        <div class="modal-footer">
+            <div class="modal-total">
+                <span class="modal-total-label">Total</span>
+                <span class="modal-total-valor">$ 6.379.354</span>
+            </div>
+            <a href="https://compragamer.com/armatupc?paso=11&tipo=26&cpu=16100&mother=18987&ccpu=19216&video=17608&hd=19533&fuente=18469&monitores=18702,18451&perifericos=16232,19094,19094,19094,9548,15978&gab=16965&mem=17147,17147"
+               target="_blank" class="btn-primary">Ver en CompraGamer →</a>
+        </div>
+    </div>
+</div>
 
         <!-- ── MANTENIMIENTO ── -->
         <section id="mantenimiento">
@@ -305,7 +516,7 @@
                         <h3 class="tarjeta-titulo">Ficha Técnica Final</h3>
                         <p class="tarjeta-spec">Mantenimiento preventivo y correctivo de una PC funcional del
                             laboratorio.</p>
-                        <a href="LINK_FICHA_MANTENIMIENTO" target="_blank" class="btn-ghost mt">Ver Ficha Técnica →</a>
+                        <a href="https://docs.google.com/document/d/1TToy6zw8-GHuo5NB6faNTYl-qROln-MxgdZdxA073dI/edit?usp=sharing" target="_blank" class="btn-ghost mt">Ver Ficha Técnica →</a>
                     </div>
                 </div>
 
@@ -342,7 +553,7 @@
                         <h3 class="tarjeta-titulo">Lentes Asistenciales</h3>
                         <p class="tarjeta-spec">Detección de proximidad y alertas sonoras para asistencia visual.</p>
                         <div class="tarjeta-actions">
-                            <a href="LINK_AL_CODIGO_O_INFORME" target="_blank" class="btn-ghost">Ver Código →</a>
+                            <!-- <a href="LINK_AL_CODIGO_O_INFORME" target="_blank" class="btn-ghost">Ver Código →</a> -->
                         </div>
                     </div>
                 </div>
@@ -356,7 +567,7 @@
                         <h3 class="tarjeta-titulo">Basurero Inteligente</h3>
                         <p class="tarjeta-spec">Apertura automática mediante detección de movimiento.</p>
                         <div class="tarjeta-actions">
-                            <a href="LINK_AL_CODIGO_O_INFORME" target="_blank" class="btn-ghost">Ver Código →</a>
+                            <!-- <a href="LINK_AL_CODIGO_O_INFORME" target="_blank" class="btn-ghost">Ver Código →</a> -->
                         </div>
                     </div>
                 </div>
