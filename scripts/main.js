@@ -1,54 +1,81 @@
-/* --- ETAPA 4: MANIPULACIÓN DEL DOM E INTERACTIVIDAD --- */
+/* ── main.js ── Santino Awada Portfolio ── */
 
-/* PASO 1: INSTANCIAR REFERENCIAS A LOS NODOS DEL DOM
-   Utilizamos el método getElementById() perteneciente al objeto global 'document'.
-   Este método recibe como parámetro un string (cadena de texto) con el valor del atributo 'id'
-   del elemento HTML, y retorna la referencia a ese nodo en el DOM.
-   Guardamos estas referencias declarando constantes (const) para asegurar que la referencia en memoria no sea reasignada.
-*/
+// ── SCROLL REVEAL ──────────────────────────
+const revealObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    },
+    { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+);
 
-const botonAbrir = document.getElementById('btn-diagnostico');
-const botonCerrar = document.getElementById('btn-cerrar');
-const ventanaModal = document.getElementById('modal-info');
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
+// ── NAV SCROLL EFFECT ──────────────────────
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
 
-/* PASO 2: REGISTRO DE MANEJADORES DE EVENTOS (EVENT LISTENERS)
-   Invocamos el método addEventListener() sobre los nodos de los botones.
-   Este método recibe dos parámetros obligatorios:
-   1. El tipo de evento a escuchar (el string 'click').
-   2. Una función 'callback' (función anónima) que contiene el bloque de instrucciones 
-      que se ejecutará o "disparará" cuando el evento ocurra.
-*/
+// ── THEME TOGGLE ───────────────────────────
+const btnTema = document.getElementById('btn-tema');
 
-botonAbrir.addEventListener('click', function() {
-    /* Invocamos el método nativo showModal() perteneciente a la API del elemento HTMLDialogElement.
-       Este método renderiza la etiqueta <dialog> en la capa superior (top layer) del navegador,
-       bloqueando la interacción con el resto del documento principal (comportamiento modal). */
-    ventanaModal.showModal();
+function applyTheme(mode) {
+    document.body.classList.toggle('modo-claro', mode === 'claro');
+    btnTema.textContent = mode === 'claro' ? '☀︎' : '☽';
+    localStorage.setItem('tema', mode);
+}
+
+const savedTheme = localStorage.getItem('tema') || 'oscuro';
+applyTheme(savedTheme);
+
+btnTema.addEventListener('click', () => {
+    const current = document.body.classList.contains('modo-claro') ? 'claro' : 'oscuro';
+    applyTheme(current === 'claro' ? 'oscuro' : 'claro');
 });
 
-botonCerrar.addEventListener('click', function() {
-    /* Invocamos el método nativo close() sobre el nodo del dialog.
-       Este método cambia el estado del elemento a oculto y devuelve el foco al documento. */
-    ventanaModal.close();
-});
-/* --- ETAPA 7: LÓGICA DEL MODO OSCURO (ESTILO SUTIL) --- */
+// ── DIALOG: btn-diagnostico ────────────────
+const btnDiag = document.getElementById('btn-diagnostico');
+const modalInfo = document.getElementById('modal-info');
+const btnCerrar = document.getElementById('btn-cerrar');
 
-/* 1. Capturamos el nodo del botón flotante */
-const botonTema = document.getElementById('btn-tema');
+if (btnDiag) btnDiag.addEventListener('click', () => modalInfo.showModal());
+if (btnCerrar) btnCerrar.addEventListener('click', () => modalInfo.close());
 
-/* 2. Escuchamos el evento de clic */
-botonTema.addEventListener('click', function() {
-    
-    /* El método toggle inyecta o retira la clase 'modo-oscuro' del body */
-    document.body.classList.toggle('modo-oscuro');
-    
-    /* Lógica Condicional (If/Else): Evaluamos qué ícono mostrar */
-    if (document.body.classList.contains('modo-oscuro')) {
-        /* Si el modo oscuro está activo, cambiamos el texto por un sol */
-        botonTema.textContent = '☀'; 
-    } else {
-        /* Si el modo oscuro se apagó, volvemos a la luna */
-        botonTema.textContent = '☽'; 
-    }
+// Close dialogs on backdrop click
+document.querySelectorAll('dialog').forEach(dialog => {
+    dialog.addEventListener('click', e => {
+        const rect = dialog.getBoundingClientRect();
+        const clickedOutside =
+            e.clientX < rect.left || e.clientX > rect.right ||
+            e.clientY < rect.top  || e.clientY > rect.bottom;
+        if (clickedOutside) dialog.close();
+    });
 });
+
+// ── SMOOTH NAV ACTIVE STATE ─────────────────
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('nav a');
+
+const sectionObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => {
+                    link.style.color = '';
+                    link.style.background = '';
+                });
+                const active = document.querySelector(`nav a[href="#${entry.target.id}"]`);
+                if (active) {
+                    active.style.color = 'var(--accent)';
+                }
+            }
+        });
+    },
+    { threshold: 0.4 }
+);
+
+sections.forEach(s => sectionObserver.observe(s));
