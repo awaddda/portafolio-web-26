@@ -24,17 +24,26 @@ window.addEventListener('scroll', () => {
 const btnTema = document.getElementById('btn-tema');
 
 function applyTheme(mode) {
-    document.body.classList.toggle('modo-claro', mode === 'claro');
-    btnTema.textContent = mode === 'claro' ? '☀︎' : '☽';
+    // IMPORTANTE: Usar 'modo-oscuro' que es lo que está definido en el CSS
+    if (mode === 'oscuro') {
+        document.body.classList.add('modo-oscuro');
+        btnTema.textContent = '☀︎'; // ☀︎ = cambiar a claro
+    } else {
+        document.body.classList.remove('modo-oscuro');
+        btnTema.textContent = '☽'; // ☽ = cambiar a oscuro
+    }
     localStorage.setItem('tema', mode);
 }
 
+// Cargar tema guardado o usar 'oscuro' por defecto
 const savedTheme = localStorage.getItem('tema') || 'oscuro';
 applyTheme(savedTheme);
 
+// Toggle al hacer click
 btnTema.addEventListener('click', () => {
-    const current = document.body.classList.contains('modo-claro') ? 'claro' : 'oscuro';
-    applyTheme(current === 'claro' ? 'oscuro' : 'claro');
+    const isDark = document.body.classList.contains('modo-oscuro');
+    // Si está oscuro → cambiar a claro, si está claro → cambiar a oscuro
+    applyTheme(isDark ? 'claro' : 'oscuro');
 });
 
 // ── DIALOG: btn-diagnostico ────────────────
@@ -70,7 +79,7 @@ const sectionObserver = new IntersectionObserver(
                 });
                 const active = document.querySelector(`nav a[href="#${entry.target.id}"]`);
                 if (active) {
-                    active.style.color = 'var(--accent)';
+                    active.style.color = 'var(--neo-accent)';
                 }
             }
         });
@@ -96,7 +105,9 @@ function cerrarModal(id) {
     if (!overlay) return;
     overlay.classList.remove('activo');
     document.body.style.overflow = '';
-    document.removeEventListener('keydown', overlay._onKeyDown);
+    if (overlay._onKeyDown) {
+        document.removeEventListener('keydown', overlay._onKeyDown);
+    }
 }
 
 // Cerrar al hacer click fuera del panel
