@@ -8,21 +8,22 @@
 /* ── TOKENS ─────────────────────────────── */
 :root {
     /* Superficie: modo claro */
-    --neo-canvas: #F5F0E8;
+    --neo-canvas: #FFFDF7;
     --neo-surface: #FFFFFF;
     --neo-text: #1A1A1A;
     --neo-border: #1A1A1A;
     --neo-shadow: #1A1A1A;
-    --neo-muted-text: rgba(26, 26, 26, 0.6);
+    --neo-muted-text: rgba(26, 26, 26, 0.55);
 
     /* Paleta de acento — fija en ambos modos */
     --neo-accent: #FF6B6B;
     --neo-secondary: #FFD93D;
     --neo-tertiary: #C4B5FD;
     --neo-on-accent: #1A1A1A;
+    --neo-on-accent-light: #1A1A1A;
 
-    --neo-dot: rgba(26, 26, 26, 0.4);
-    --neo-grid: rgba(26, 26, 26, 0.08);
+    --neo-dot: rgba(26, 26, 26, 0.35);
+    --neo-grid: rgba(26, 26, 26, 0.06);
 
     --neo-radius: 0px;
     --neo-font: 'Space Grotesk', sans-serif;
@@ -35,15 +36,18 @@
 
 /* ── MODO OSCURO ─────────────────────────── */
 body.modo-oscuro {
-    --neo-canvas: #0D0D0D;
-    --neo-surface: #1A1A1A;
-    --neo-text: #F5F0E8;
-    --neo-border: #F5F0E8;
-    --neo-shadow: #F5F0E8;
-    --neo-muted-text: rgba(245, 240, 232, 0.65);
+    --neo-canvas: #121212;
+    --neo-surface: #1E1E1E;
+    --neo-text: #F0EDE8;
+    --neo-border: #F0EDE8;
+    --neo-shadow: #F0EDE8;
+    --neo-muted-text: rgba(240, 237, 232, 0.6);
 
-    --neo-dot: rgba(245, 240, 232, 0.35);
-    --neo-grid: rgba(245, 240, 232, 0.06);
+    --neo-dot: rgba(240, 237, 232, 0.25);
+    --neo-grid: rgba(240, 237, 232, 0.05);
+    
+    --neo-on-accent: #1A1A1A;
+    --neo-on-accent-light: #F0EDE8;
 }
 
 /* ── Ajustes específicos modo oscuro ─────── */
@@ -52,57 +56,48 @@ body.modo-oscuro .hero-line-1 {
 }
 
 body.modo-oscuro .caja-desc {
-    color: rgba(245, 240, 232, 0.75);
-}
-
-body.modo-oscuro .modal-lista li:nth-child(odd) {
-    background: rgba(196, 181, 253, 0.12);
+    color: rgba(240, 237, 232, 0.75);
 }
 
 body.modo-oscuro .tarjeta-img-wrap {
     background-color: #2A2A2A;
-    background-image: radial-gradient(rgba(245, 240, 232, 0.15) 1.5px, transparent 1.5px);
+    background-image: radial-gradient(rgba(240, 237, 232, 0.1) 1.5px, transparent 1.5px);
 }
 
-body.modo-oscuro .tarjeta-spec {
-    color: rgba(245, 240, 232, 0.7);
-}
-
-body.modo-oscuro .section-sub {
-    color: rgba(245, 240, 232, 0.7);
-}
-
-body.modo-oscuro .hero-sub {
-    color: rgba(245, 240, 232, 0.7);
-}
-
-body.modo-oscuro .modal-sub {
-    color: rgba(245, 240, 232, 0.65);
-}
-
-body.modo-oscuro .modal-lista span {
-    color: rgba(245, 240, 232, 0.65);
-}
-
-body.modo-oscuro .modal-total-label {
-    color: rgba(245, 240, 232, 0.6);
+body.modo-oscuro .modal-lista li:nth-child(odd) {
+    background: rgba(196, 181, 253, 0.08);
 }
 
 body.modo-oscuro .modal-lista li {
-    border-bottom-color: rgba(245, 240, 232, 0.25);
+    border-bottom-color: rgba(240, 237, 232, 0.12);
 }
 
 body.modo-oscuro .modal-lista {
-    border-color: rgba(245, 240, 232, 0.3);
+    border-color: rgba(240, 237, 232, 0.2);
 }
 
 body.modo-oscuro .modal-footer {
-    border-top-color: rgba(245, 240, 232, 0.3);
+    border-top-color: rgba(240, 237, 232, 0.2);
+}
+
+body.modo-oscuro footer {
+    background: var(--neo-text);
+    color: var(--neo-canvas);
+}
+
+body.modo-oscuro .footer-brand,
+body.modo-oscuro .footer-copy {
+    color: var(--neo-canvas);
 }
 
 body.modo-oscuro .btn-outline {
     background: var(--neo-surface);
     color: var(--neo-text);
+}
+
+body.modo-oscuro .btn-outline:hover {
+    background: var(--neo-secondary);
+    color: var(--neo-on-accent);
 }
 
 body.modo-oscuro .btn-ghost {
@@ -115,56 +110,12 @@ body.modo-oscuro .btn-ghost:hover {
     color: var(--neo-on-accent);
 }
 
-body.modo-oscuro .btn-outline:hover {
-    background: var(--neo-secondary);
+body.modo-oscuro .btn-primary {
     color: var(--neo-on-accent);
 }
 
-body.modo-oscuro .modal-panel {
-    background: var(--neo-surface);
-    border-color: var(--neo-border);
-}
-
-body.modo-oscuro .modal-badge {
-    background: var(--neo-tertiary);
+body.modo-oscuro .hero-cta {
     color: var(--neo-on-accent);
-}
-
-body.modo-oscuro .modal-badge--gold {
-    background: var(--neo-secondary);
-    color: var(--neo-on-accent);
-}
-
-body.modo-oscuro .modal-close {
-    background: var(--neo-secondary);
-    color: var(--neo-on-accent);
-}
-
-body.modo-oscuro .caja-destacada {
-    background: var(--neo-tertiary);
-}
-
-body.modo-oscuro .caja-titulo {
-    color: var(--neo-on-accent);
-}
-
-body.modo-oscuro .caja-eyebrow {
-    background: var(--neo-surface);
-    color: var(--neo-text);
-    border-color: var(--neo-border);
-}
-
-body.modo-oscuro footer {
-    background: var(--neo-text);
-    color: var(--neo-canvas);
-}
-
-body.modo-oscuro .footer-brand {
-    color: var(--neo-canvas);
-}
-
-body.modo-oscuro .footer-copy {
-    color: rgba(245, 240, 232, 0.6);
 }
 
 /* ── RESET ──────────────────────────────── */
@@ -199,6 +150,7 @@ body {
     background-size: 22px 22px;
     opacity: 0.5;
     pointer-events: none;
+    z-index: 0;
 }
 
 /* ── NAV ────────────────────────────────── */
@@ -368,8 +320,16 @@ section {
     max-width: none;
 }
 
-#inicio > * { position: relative; z-index: 1; max-width: 1180px; margin-left: auto; margin-right: auto; width: 100%; padding-left: 24px; padding-right: 24px; }
-#inicio .hero-bg-glow { max-width: none; padding: 0; }
+#inicio > * { 
+    position: relative; 
+    z-index: 1; 
+    max-width: 1180px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 100%; 
+    padding-left: 24px; 
+    padding-right: 24px; 
+}
 
 .hero-eyebrow {
     display: inline-flex;
@@ -434,6 +394,23 @@ section {
     border: 4px solid var(--neo-border);
     box-shadow: var(--shadow-md);
     transform: rotate(1deg);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                letter-spacing 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+}
+
+.hero-line-2:hover {
+    transform: rotate(2deg) scale(1.04) translateY(-3px);
+    letter-spacing: 0.06em;
+    box-shadow: 12px 12px 0px 0px var(--neo-shadow);
+}
+
+.hero-line-2:active {
+    transform: rotate(-1deg) scale(0.95) translateY(2px);
+    letter-spacing: -0.02em;
+    box-shadow: 4px 4px 0px 0px var(--neo-shadow);
+    transition-duration: 0.08s;
 }
 
 .hero-sub {
@@ -760,7 +737,7 @@ section {
 .caja-desc {
     font-size: 0.98rem;
     font-weight: 500;
-    color: rgba(26, 26, 26, 0.7);
+    color: rgba(26, 26, 26, 0.65);
     max-width: 480px;
     margin: 0 auto 28px;
     line-height: 1.6;
@@ -1035,25 +1012,4 @@ footer {
         transform: none !important; 
     }
     * { scroll-behavior: auto !important; }
-}
-/* ── TEXTO "de laboratorio" — Reactivo simple ── */
-.hero-line-2 {
-    display: inline-block;
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
-                letter-spacing 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
-                box-shadow 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    cursor: pointer;
-}
-
-.hero-line-2:hover {
-    transform: rotate(2deg) scale(1.04) translateY(-4px);
-    letter-spacing: 0.06em;
-    box-shadow: 12px 12px 0px 0px var(--neo-shadow), 0 0 30px rgba(255, 107, 107, 0.12);
-}
-
-.hero-line-2:active {
-    transform: rotate(-1deg) scale(0.95) translateY(2px);
-    letter-spacing: -0.02em;
-    box-shadow: 4px 4px 0px 0px var(--neo-shadow);
-    transition-duration: 0.08s;
 }
