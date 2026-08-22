@@ -36,8 +36,8 @@
 
 /* ── MODO OSCURO ─────────────────────────── */
 body.modo-oscuro {
-    --neo-canvas: #121212;
-    --neo-surface: #1E1E1E;
+    --neo-canvas: #1E1E1E;
+    --neo-surface: #292929;
     --neo-text: #F0EDE8;
     --neo-border: #F0EDE8;
     --neo-shadow: #F0EDE8;
@@ -45,6 +45,10 @@ body.modo-oscuro {
 
     --neo-dot: rgba(240, 237, 232, 0.25);
     --neo-grid: rgba(240, 237, 232, 0.05);
+
+    /* Terciario un poco más apagado en modo oscuro para que no "brille" 
+       tanto sobre el fondo oscuro, pero conservando el mismo tono lila */
+    --neo-tertiary: #9C8FBF;
     
     --neo-on-accent: #1A1A1A;
     --neo-on-accent-light: #F0EDE8;
@@ -55,12 +59,8 @@ body.modo-oscuro .hero-line-1 {
     -webkit-text-stroke: 3px var(--neo-border);
 }
 
-body.modo-oscuro .caja-desc {
-    color: rgba(240, 237, 232, 0.75);
-}
-
 body.modo-oscuro .tarjeta-img-wrap {
-    background-color: #2A2A2A;
+    background-color: #333333;
     background-image: radial-gradient(rgba(240, 237, 232, 0.1) 1.5px, transparent 1.5px);
 }
 
@@ -737,6 +737,8 @@ section {
 .caja-desc {
     font-size: 0.98rem;
     font-weight: 500;
+    /* Fondo de .caja-destacada es fijo (--neo-tertiary) en ambos modos,
+       por eso el texto también debe quedar fijo en un tono oscuro. */
     color: rgba(26, 26, 26, 0.65);
     max-width: 480px;
     margin: 0 auto 28px;
