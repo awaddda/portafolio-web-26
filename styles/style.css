@@ -476,12 +476,12 @@ section {
 /* ── GRID ───────────────────────────────── */
 .galeria-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 28px;
     align-items: stretch;
 }
-.galeria-grid.col-2 { grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
-.galeria-grid.col-3 { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.galeria-grid.col-2 { grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
+.galeria-grid.col-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 
 /* ── CARDS ──────────────────────────────── */
 .tarjeta {
