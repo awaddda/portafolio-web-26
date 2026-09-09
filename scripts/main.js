@@ -66,6 +66,41 @@ if (btnMenu && navLista) {
     });
 }
 
+// ── DIAGRAMA INTERACTIVO: Layout de la Placa Madre ──
+const layoutFigura = document.querySelector('.layout-figura');
+const layoutLegend = document.querySelector('.layout-legend');
+
+if (layoutFigura && layoutLegend) {
+    const marcadores = layoutFigura.querySelectorAll('.layout-marker');
+    const items = layoutLegend.querySelectorAll('li');
+
+    const resaltar = (num) => {
+        marcadores.forEach(m => m.classList.toggle('activo', m.dataset.num === num));
+        items.forEach((li, i) => li.classList.toggle('activo', String(i + 1) === num));
+    };
+
+    const limpiar = () => {
+        marcadores.forEach(m => m.classList.remove('activo'));
+        items.forEach(li => li.classList.remove('activo'));
+    };
+
+    marcadores.forEach(m => {
+        m.addEventListener('mouseenter', () => resaltar(m.dataset.num));
+        m.addEventListener('mouseleave', limpiar);
+        m.addEventListener('focus', () => resaltar(m.dataset.num));
+        m.addEventListener('blur', limpiar);
+        m.addEventListener('click', () => {
+            resaltar(m.dataset.num);
+            items[Number(m.dataset.num) - 1]?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        });
+    });
+
+    items.forEach((li, i) => {
+        li.addEventListener('mouseenter', () => resaltar(String(i + 1)));
+        li.addEventListener('mouseleave', limpiar);
+    });
+}
+
 // ── DIALOG: btn-diagnostico ────────────────
 const btnDiag = document.getElementById('btn-diagnostico');
 const modalInfo = document.getElementById('modal-info');
