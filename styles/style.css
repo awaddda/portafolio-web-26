@@ -533,12 +533,6 @@ section {
     object-fit: cover;
 }
 
-.arduino-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
-}
-
 .tarjeta-img-wide {
     aspect-ratio: 16 / 9;
     min-height: 0;
@@ -570,13 +564,14 @@ section {
 
 .wokwi-embed-wrap {
     position: relative;
+    aspect-ratio: 16 / 9;
     border-bottom: 4px solid var(--neo-border);
     background: var(--neo-tertiary);
 }
 
 .wokwi-embed-wrap iframe {
     width: 100%;
-    height: 360px;
+    height: 100%;
     border: none;
     display: block;
 }
