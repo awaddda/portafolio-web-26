@@ -533,6 +533,41 @@ section {
     object-fit: cover;
 }
 
+.arduino-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.tarjeta-img-wide {
+    aspect-ratio: 16 / 9;
+    min-height: 0;
+}
+
+.tarjeta-img-wide img {
+    max-height: none;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tarjeta-video-wrap {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    background: var(--neo-tertiary);
+    border-bottom: 4px solid var(--neo-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tarjeta-video-wrap video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    background: var(--neo-canvas);
+}
+
 .wokwi-embed-wrap {
     position: relative;
     border-bottom: 4px solid var(--neo-border);
