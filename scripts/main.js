@@ -46,6 +46,26 @@ btnTema.addEventListener('click', () => {
     applyTheme(isDark ? 'claro' : 'oscuro');
 });
 
+// ── MENÚ MOBILE (hamburguesa) ──────────────
+const btnMenu = document.getElementById('btn-menu');
+const navLista = document.querySelector('nav ul');
+
+if (btnMenu && navLista) {
+    btnMenu.addEventListener('click', () => {
+        const abierto = navLista.classList.toggle('abierto');
+        btnMenu.setAttribute('aria-expanded', String(abierto));
+        btnMenu.textContent = abierto ? '✕' : '☰';
+    });
+
+    navLista.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLista.classList.remove('abierto');
+            btnMenu.setAttribute('aria-expanded', 'false');
+            btnMenu.textContent = '☰';
+        });
+    });
+}
+
 // ── DIALOG: btn-diagnostico ────────────────
 const btnDiag = document.getElementById('btn-diagnostico');
 const modalInfo = document.getElementById('modal-info');

@@ -9,12 +9,6 @@
     <meta name="keywords" content="hardware, armado de pc, intel, asus, mantenimiento, arduino, informática">
     <title>Portafolio — Santino Awada</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;600;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap"
-        rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
-        rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
@@ -33,7 +27,9 @@
                 <li><a href="#mantenimiento">Mantenimiento</a></li>
                 <!--<li><a href="#arduino">Arduino</a></li>-->
             </ul>
-            <div class="nav-spacer"></div>
+            <div class="nav-spacer">
+                <button id="btn-menu" class="btn-menu" aria-label="Abrir menú" aria-expanded="false">☰</button>
+            </div>
         </div>
     </nav>
     <main>
@@ -202,6 +198,60 @@
 
             </div>
         </section>
+
+        <!-- ── DIALOG: Layout de la Placa Madre ── -->
+        <dialog id="modal-info" aria-labelledby="modal-info-titulo">
+            <button id="btn-cerrar" class="modal-close" aria-label="Cerrar">✕</button>
+            <div class="modal-header">
+                <span class="modal-badge">ASUS A320M-K PRIME</span>
+                <h2 class="modal-titulo" id="modal-info-titulo">Layout de la Placa Madre</h2>
+                <p class="modal-sub">Anatomía y componentes principales de una placa madre.</p>
+            </div>
+            <div class="layout-grid">
+                <figure class="layout-item">
+                    <img src="images/chipset.jpg" alt="Vista general con zócalo, VRM, ranuras DIMM y slots M.2">
+                    <figcaption>
+                        <strong>Vista General</strong>
+                        <span>Zócalo, VRM, ranuras DIMM, slots M.2/PCIe y conectores SATA.</span>
+                    </figcaption>
+                </figure>
+                <figure class="layout-item">
+                    <img src="images/socket.jpg" alt="Zócalo del procesador y slot M.2">
+                    <figcaption>
+                        <strong>Zócalo (Socket)</strong>
+                        <span>Alojamiento del microprocesador, junto a una ranura M.2.</span>
+                    </figcaption>
+                </figure>
+                <figure class="layout-item">
+                    <img src="images/vrm.png" alt="Módulos reguladores de voltaje (VRM)">
+                    <figcaption>
+                        <strong>VRM</strong>
+                        <span>Módulos reguladores de voltaje: estabilizan la energía que llega al CPU.</span>
+                    </figcaption>
+                </figure>
+                <figure class="layout-item">
+                    <img src="images/buses.jpg" alt="Buses y slots de expansión M.2">
+                    <figcaption>
+                        <strong>Buses y Slots</strong>
+                        <span>Canales de datos M.2/PCIe que conectan los componentes entre sí.</span>
+                    </figcaption>
+                </figure>
+                <figure class="layout-item">
+                    <img src="images/conexiones.png" alt="Puerto de conexiones traseras de la placa madre">
+                    <figcaption>
+                        <strong>Conexiones</strong>
+                        <span>Puertos de entrada/salida traseros: USB, audio, red y video.</span>
+                    </figcaption>
+                </figure>
+                <figure class="layout-item">
+                    <img src="images/tamanos.png" alt="Comparación de factores de forma ATX, Micro ATX y Mini ATX">
+                    <figcaption>
+                        <strong>Factor de Forma</strong>
+                        <span>Comparación de tamaños: ATX, Micro ATX y Mini ATX.</span>
+                    </figcaption>
+                </figure>
+            </div>
+        </dialog>
 
         <!-- ── PERIFÉRICOS ── -->
         <section id="perifericos">
