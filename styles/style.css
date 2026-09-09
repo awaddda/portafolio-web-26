@@ -527,6 +527,25 @@ section {
 
 .tarjeta-img-tall { min-height: 220px; }
 
+.tarjeta-img-tall img {
+    max-height: none;
+    height: 100%;
+    object-fit: cover;
+}
+
+.wokwi-embed-wrap {
+    position: relative;
+    border-bottom: 4px solid var(--neo-border);
+    background: var(--neo-tertiary);
+}
+
+.wokwi-embed-wrap iframe {
+    width: 100%;
+    height: 360px;
+    border: none;
+    display: block;
+}
+
 .tarjeta-body {
     padding: 22px 24px 26px;
     display: flex;
