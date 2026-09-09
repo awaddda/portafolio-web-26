@@ -203,53 +203,40 @@
         <dialog id="modal-info" aria-labelledby="modal-info-titulo">
             <button id="btn-cerrar" class="modal-close" aria-label="Cerrar">✕</button>
             <div class="modal-header">
-                <span class="modal-badge">ASUS A320M-K PRIME</span>
+                <span class="modal-badge">ASUS PRIME A320M-K</span>
                 <h2 class="modal-titulo" id="modal-info-titulo">Layout de la Placa Madre</h2>
-                <p class="modal-sub">Anatomía y componentes principales de una placa madre.</p>
+                <p class="modal-sub">Componentes principales identificados sobre la placa analizada.</p>
             </div>
-            <div class="layout-grid">
-                <figure class="layout-item">
-                    <img src="images/chipset.jpg" alt="Vista general con zócalo, VRM, ranuras DIMM y slots M.2">
-                    <figcaption>
-                        <strong>Vista General</strong>
-                        <span>Zócalo, VRM, ranuras DIMM, slots M.2/PCIe y conectores SATA.</span>
-                    </figcaption>
+
+            <div class="layout-diagrama">
+                <figure class="layout-figura">
+                    <img src="images/a320.png" alt="Placa madre ASUS PRIME A320M-K con sus componentes numerados">
+                    <span class="layout-marker" style="top:42%; left:59%;">1</span>
+                    <span class="layout-marker" style="top:15%; left:85%;">2</span>
+                    <span class="layout-marker" style="top:20%; left:43%;">3</span>
+                    <span class="layout-marker" style="top:15%; left:30%;">4</span>
+                    <span class="layout-marker" style="top:45%; left:95%;">5</span>
+                    <span class="layout-marker" style="top:69%; left:48%;">6</span>
+                    <span class="layout-marker" style="top:85%; left:30%;">7</span>
+                    <span class="layout-marker" style="top:84%; left:64%;">8</span>
+                    <span class="layout-marker" style="top:92%; left:93%;">9</span>
+                    <span class="layout-marker" style="top:40%; left:9%;">10</span>
+                    <span class="layout-marker" style="top:54%; left:35%;">11</span>
                 </figure>
-                <figure class="layout-item">
-                    <img src="images/socket.jpg" alt="Zócalo del procesador y slot M.2">
-                    <figcaption>
-                        <strong>Zócalo (Socket)</strong>
-                        <span>Alojamiento del microprocesador, junto a una ranura M.2.</span>
-                    </figcaption>
-                </figure>
-                <figure class="layout-item">
-                    <img src="images/vrm.png" alt="Módulos reguladores de voltaje (VRM)">
-                    <figcaption>
-                        <strong>VRM</strong>
-                        <span>Módulos reguladores de voltaje: estabilizan la energía que llega al CPU.</span>
-                    </figcaption>
-                </figure>
-                <figure class="layout-item">
-                    <img src="images/buses.jpg" alt="Buses y slots de expansión M.2">
-                    <figcaption>
-                        <strong>Buses y Slots</strong>
-                        <span>Canales de datos M.2/PCIe que conectan los componentes entre sí.</span>
-                    </figcaption>
-                </figure>
-                <figure class="layout-item">
-                    <img src="images/conexiones.png" alt="Puerto de conexiones traseras de la placa madre">
-                    <figcaption>
-                        <strong>Conexiones</strong>
-                        <span>Puertos de entrada/salida traseros: USB, audio, red y video.</span>
-                    </figcaption>
-                </figure>
-                <figure class="layout-item">
-                    <img src="images/tamanos.png" alt="Comparación de factores de forma ATX, Micro ATX y Mini ATX">
-                    <figcaption>
-                        <strong>Factor de Forma</strong>
-                        <span>Comparación de tamaños: ATX, Micro ATX y Mini ATX.</span>
-                    </figcaption>
-                </figure>
+
+                <ol class="layout-legend">
+                    <li><strong>Zócalo del procesador</strong><span>Socket AM4 — alojamiento del microprocesador.</span></li>
+                    <li><strong>Ranuras de memoria RAM</strong><span>DIMM_A1 / DIMM_B1 — soporte DDR4.</span></li>
+                    <li><strong>VRM (regulador de voltaje)</strong><span>DIGI+ VRM — estabiliza la energía que recibe el CPU.</span></li>
+                    <li><strong>Conector de alimentación CPU</strong><span>ATX12V de 4 pines.</span></li>
+                    <li><strong>Conector de alimentación principal</strong><span>EATXPWR de 24 pines para la placa.</span></li>
+                    <li><strong>Slot PCI Express x16</strong><span>PCIEX16 — ranura para la tarjeta gráfica.</span></li>
+                    <li><strong>Slots PCI Express x1</strong><span>PCIEX1_1 / PCIEX1_2 — expansión adicional.</span></li>
+                    <li><strong>Ranura M.2</strong><span>M.2 Socket3 — almacenamiento SSD NVMe/SATA.</span></li>
+                    <li><strong>Puertos SATA 6Gb/s</strong><span>Conexión de discos y unidades ópticas.</span></li>
+                    <li><strong>Panel de conexiones traseras</strong><span>HDMI, VGA, USB, LAN y audio.</span></li>
+                    <li><strong>Batería CMOS</strong><span>CR2032 — mantiene la configuración de BIOS.</span></li>
+                </ol>
             </div>
         </dialog>
 
