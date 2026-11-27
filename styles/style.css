@@ -531,3 +531,110 @@ body.modo-oscuro .caja-destacada {
     font-size: 0.78rem;
     font-weight: 600;
 }
+/* ── PROYECTO MINISUMO ──────────────────── */
+.tarjeta-destacada {
+    border-color: #fa8072;
+}
+
+#dialog-minisumo {
+    max-width: 860px;
+    width: 92%;
+    max-height: 88vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #fa8072 #1e2740;
+}
+
+#dialog-minisumo::-webkit-scrollbar { width: 6px; }
+#dialog-minisumo::-webkit-scrollbar-track { background: #1e2740; border-radius: 3px; }
+#dialog-minisumo::-webkit-scrollbar-thumb { background: #fa8072; border-radius: 3px; }
+
+.minisumo-intro {
+    color: #cbd5e1;
+    line-height: 1.6;
+    margin: 0 0 18px 0;
+}
+
+.minisumo-galeria {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.minisumo-galeria figure {
+    margin: 0;
+    background: #0f1117;
+    border: 1px solid #1e2740;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.minisumo-galeria img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+}
+
+.minisumo-galeria figcaption {
+    color: #94a3b8;
+    font-size: 0.8rem;
+    padding: 8px 12px 10px;
+}
+
+.minisumo-nota {
+    color: #64748b;
+    font-size: 0.78rem;
+    margin: 10px 0 0 0;
+}
+
+.minisumo-tabla-wrap {
+    overflow-x: auto;
+}
+
+.minisumo-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.minisumo-tabla th {
+    color: #64748b;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid #1e2740;
+}
+
+.minisumo-tabla td {
+    color: #e2e8f0;
+    padding: 8px 10px;
+    border-bottom: 1px solid #1e2740;
+}
+
+.minisumo-tabla td:last-child {
+    color: #fa8072;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.minisumo-codigo {
+    background: #0f1117;
+    border: 1px solid #1e2740;
+    border-radius: 8px;
+    padding: 14px 16px;
+    overflow-x: auto;
+    font-size: 0.82rem;
+    line-height: 1.55;
+    color: #e2e8f0;
+    margin: 4px 0 0 0;
+}
+
+@media screen and (max-width: 600px) {
+    .minisumo-galeria {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}

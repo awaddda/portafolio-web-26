@@ -200,6 +200,18 @@
                     <p>Lógica: Apertura automática del contenedor mediante detección de movimiento.</p>
                     <a href="LINK_AL_CODIGO_O_INFORME" target="_blank" class="boton-accion">Ver Código y Circuito</a>
                 </div>
+
+                <div class="tarjeta tarjeta-destacada">
+                    <img src="images/minisumo_render.jpg" alt="Render 3D del robot minisumo Cybertruck sobre el ring"
+                        class="redondeada">
+                    <h3>Robot Minisumo "Cybertruck"</h3>
+                    <p>Hardware: ESP32, Driver TB6612FNG, 2 Motores N20, Sharp + VL53L0X, 3 sensores TCRT5000.</p>
+                    <p>Lógica: Busca al rival, lo empuja fuera del ring y esquiva el borde blanco, 1000 veces por
+                        segundo.</p>
+                    <button onclick="document.getElementById('dialog-minisumo').showModal()" class="boton-accion">
+                        Ver Proyecto Completo
+                    </button>
+                </div>
             </div>
         </section>
 
@@ -356,6 +368,160 @@
             <div class="dialog-badges">
                 <span class="badge">Overclocking → mayor rendimiento · mayor riesgo</span>
                 <span class="badge">Undervolting → menor temp · mismo rendimiento</span>
+            </div>
+
+        </dialog>
+
+        <!-- DIALOG MINISUMO -->
+        <dialog id="dialog-minisumo">
+
+            <div class="dialog-header">
+                <div>
+                    <p class="dialog-subtitulo">Arduino e IoT · Competencia Nacional de Minisumo</p>
+                    <h2 class="dialog-titulo">Robot Minisumo "Cybertruck"</h2>
+                </div>
+                <button onclick="document.getElementById('dialog-minisumo').close()" class="dialog-cerrar">✕ Cerrar</button>
+            </div>
+
+            <p class="minisumo-intro">Un robot <strong>autónomo</strong> que pelea solo: nadie lo maneja. Dos robots se
+                enfrentan en un ring negro de 77 cm con borde blanco y gana el que saca al otro. Lo diseñamos desde
+                cero: el modelo 3D, la electrónica y el programa.</p>
+
+            <div class="minisumo-galeria">
+                <figure>
+                    <img src="images/minisumo_render.jpg" alt="Render del robot completo visto de frente" class="redondeada">
+                    <figcaption>Vista de frente: rampa en cuña y púas en el techo.</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/minisumo_explotado.jpg" alt="Render con el caparazón levantado" class="redondeada">
+                    <figcaption>Vista explotada: el caparazón sale entero hacia arriba.</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/minisumo_interior.jpg" alt="Render del interior sin caparazón" class="redondeada">
+                    <figcaption>Interior: motores, plomo, baterías y el ESP32 arriba.</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/minisumo_atras.jpg" alt="Render de la parte trasera" class="redondeada">
+                    <figcaption>Parte trasera: hueco hundido para la llave de encendido.</figcaption>
+                </figure>
+            </div>
+            <p class="minisumo-nota">Renders generados por computadora a partir del modelo 3D real.</p>
+
+            <hr class="dialog-divider">
+
+            <p class="dialog-seccion">Ficha técnica</p>
+            <div class="dialog-grid">
+                <div class="chip">
+                    <p class="chip-label">Medidas</p>
+                    <p class="chip-val">10 × 10 cm · 62 mm de alto</p>
+                </div>
+                <div class="chip">
+                    <p class="chip-label">Peso</p>
+                    <p class="chip-val">≈ 500 g (máximo del reglamento)</p>
+                </div>
+                <div class="chip">
+                    <p class="chip-label">Cerebro</p>
+                    <p class="chip-val">ESP32 DevKit V1 · 2 núcleos</p>
+                </div>
+                <div class="chip">
+                    <p class="chip-label">Energía</p>
+                    <p class="chip-val">2 × 18650 en serie · 7,4 V</p>
+                </div>
+                <div class="chip">
+                    <p class="chip-label">Motores</p>
+                    <p class="chip-val">2 × N20 · 500 rpm</p>
+                </div>
+                <div class="chip">
+                    <p class="chip-label">Velocidad de decisión</p>
+                    <p class="chip-val">1000 veces por segundo</p>
+                </div>
+                <div class="chip chip-full">
+                    <p class="chip-label">Fabricación</p>
+                    <p class="chip-val">Chasis y caparazón impresos en 3D en PLA (Bambu Lab) · lastre de plomo
+                        escondido para más agarre</p>
+                </div>
+            </div>
+
+            <hr class="dialog-divider">
+
+            <p class="dialog-seccion">Cómo funciona</p>
+            <div class="dialog-lista">
+                <div class="dialog-item"><span class="item-titulo">Ve</span><span class="item-desc"> — un sensor
+                        infrarrojo Sharp y un láser VL53L0X miden la distancia al rival hacia adelante.</span></div>
+                <div class="dialog-item"><span class="item-titulo">No se cae</span><span class="item-desc"> — 3
+                        sensores TCRT5000 miran el piso y distinguen el negro del ring del borde blanco.</span></div>
+                <div class="dialog-item"><span class="item-titulo">Piensa</span><span class="item-desc"> — el ESP32 usa
+                        un núcleo para leer el láser y el otro para el control, que corre a 1000 Hz.</span></div>
+                <div class="dialog-item"><span class="item-titulo">Empuja</span><span class="item-desc"> — el driver
+                        TB6612FNG maneja los dos motores; la rampa se mete debajo del rival y lo levanta.</span></div>
+            </div>
+
+            <hr class="dialog-divider">
+
+            <p class="dialog-seccion">Conexiones al ESP32</p>
+            <div class="minisumo-tabla-wrap">
+                <table class="minisumo-tabla">
+                    <thead>
+                        <tr>
+                            <th>Componente</th>
+                            <th>Pin del componente</th>
+                            <th>GPIO ESP32</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Sensores de línea (3)</td><td>A0 de cada TCRT5000</td><td>34 · 35 · 32</td></tr>
+                        <tr><td>Sharp GP2Y0A02YK0F</td><td>Vo (salida analógica)</td><td>36</td></tr>
+                        <tr><td>VL53L0X</td><td>SDA · SCL</td><td>21 · 22</td></tr>
+                        <tr><td>TB6612FNG motor A</td><td>PWMA · AIN1 · AIN2</td><td>25 · 26 · 27</td></tr>
+                        <tr><td>TB6612FNG motor B</td><td>PWMB · BIN1 · BIN2</td><td>13 · 18 · 19</td></tr>
+                        <tr><td>TB6612FNG</td><td>STBY</td><td>23</td></tr>
+                        <tr><td>Divisor de batería</td><td>100 kΩ / 47 kΩ</td><td>39</td></tr>
+                        <tr><td>Botón de arranque</td><td>START</td><td>4</td></tr>
+                        <tr><td>LED de estado</td><td>Ánodo</td><td>2</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="minisumo-nota">Energía: baterías → llave SS12D00 → regulador Mini-360 a 5 V → VIN del ESP32.
+                El driver toma la tensión de la batería y el programa limita los motores a 6 V.</p>
+
+            <hr class="dialog-divider">
+
+            <p class="dialog-seccion">Estrategia de pelea</p>
+            <div class="dialog-lista">
+                <div class="dialog-item"><span class="item-titulo">1. Arranque</span><span class="item-desc"> — espera
+                        los 5 segundos del reglamento y calibra el negro del ring.</span></div>
+                <div class="dialog-item"><span class="item-titulo">2. Salida en media luna</span><span
+                        class="item-desc"> — rodea al rival para atacarlo de costado. En nuestro simulador ganó el 57 %
+                        de las peleas.</span></div>
+                <div class="dialog-item"><span class="item-titulo">3. Ataque</span><span class="item-desc"> — si ve al
+                        rival a menos de 54 cm, va de frente a máxima potencia.</span></div>
+                <div class="dialog-item"><span class="item-titulo">4. Escape del borde</span><span class="item-desc"> —
+                        frena 25 ms, retrocede y gira 180° en unos 190 ms.</span></div>
+            </div>
+
+            <pre class="minisumo-codigo"><code>// Fragmento simplificado: escape del borde blanco
+if (lineaIzq || lineaCentro || lineaDer) {
+  frenar();             delay(25);
+  motores(-255, -255);  delay(100);   // atrás
+  motores( 255, -255);  delay(190);   // giro de 180°
+}</code></pre>
+
+            <hr class="dialog-divider">
+
+            <p class="dialog-seccion">Lo que aprendimos</p>
+            <div class="dialog-alerta">
+                <p class="alerta-titulo">El cableado también ocupa lugar</p>
+                <p class="alerta-desc">La primera versión del caparazón no cerraba porque no contamos el espacio de los
+                    cables. Pasamos por varias versiones (v7, v11, v12, v13) hasta llegar a la v14: una caja vacía con
+                    un soporte único para las baterías y el ESP32, y los cables soldados en vez de fichas Dupont.</p>
+            </div>
+            <div class="dialog-badges">
+                <span class="badge">C++ / Arduino IDE</span>
+                <span class="badge">ESP32 doble núcleo</span>
+                <span class="badge">Diseño 3D</span>
+                <span class="badge">Impresión 3D</span>
+                <span class="badge">Simulación</span>
+                <span class="badge">Soldadura</span>
             </div>
 
         </dialog>
