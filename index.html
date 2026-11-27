@@ -586,9 +586,14 @@
         <section id="arduino">
             <div class="section-header reveal">
                 <p class="section-eyebrow">IoT & Electrónica</p>
-                <h2 class="section-title">Proyecto Arduino</h2>
-                <p class="section-sub">Programación en C++ y electrónica aplicada — simulación en Wokwi y armado
-                    físico en protoboard.</p>
+                <h2 class="section-title">Proyectos Arduino</h2>
+                <p class="section-sub">Programación en C++ y electrónica aplicada — simulación en Wokwi, armado
+                    físico en protoboard y un robot de competencia diseñado en 3D.</p>
+            </div>
+
+            <div class="proyecto-separador primero reveal">
+                <span class="proyecto-num">01</span>
+                <span class="proyecto-linea"></span>
             </div>
 
             <div class="tarjeta tarjeta-wide reveal">
@@ -646,7 +651,141 @@
                     <p class="tarjeta-spec">Partida completa jugándose en vivo sobre el circuito armado.</p>
                 </div>
             </div>
+
+            <!-- ── PROYECTO 2: ROBOT MINISUMO ── -->
+            <div class="proyecto-separador reveal">
+                <span class="proyecto-num">02</span>
+                <span class="proyecto-linea"></span>
+            </div>
+
+            <div class="tarjeta tarjeta-wide reveal">
+                <div class="tarjeta-split">
+                    <div class="tarjeta-img-wrap tarjeta-img-wide minisumo-hero">
+                        <img src="images/minisumo_render.jpg" alt="Render 3D del robot minisumo Cybertruck sobre el ring de competencia">
+                    </div>
+                    <div class="tarjeta-body tarjeta-body-pad">
+                        <p class="tarjeta-label">ESP32 · TB6612FNG · Motores N20 · Sharp · VL53L0X · TCRT5000 · Impresión 3D</p>
+                        <h3 class="tarjeta-titulo">Robot Minisumo "Cybertruck"</h3>
+                        <p class="tarjeta-spec">Robot autónomo para la Competencia Nacional de Minisumo: dos robots de
+                            10 × 10 cm y 500 g se enfrentan en un ring de 77 cm y gana el que empuja al otro afuera.
+                            Nadie lo maneja — ve al rival con un sensor infrarrojo y un láser, mira el piso para no
+                            caerse y decide qué hacer 1000 veces por segundo. Diseñamos desde cero el modelo 3D, la
+                            electrónica y el programa.</p>
+                        <div class="minisumo-stats">
+                            <div><strong>53 mm</strong><span>de alto</span></div>
+                            <div><strong>≈ 500 g</strong><span>con plomo</span></div>
+                            <div><strong>1000 Hz</strong><span>de control</span></div>
+                            <div><strong>7,4 V</strong><span>2 × 18650</span></div>
+                        </div>
+                        <div class="tarjeta-actions">
+                            <button class="btn-primary" onclick="abrirModal('modal-minisumo')">Ver Ficha Completa →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="galeria-grid col-3" style="margin-top: 28px;">
+                <div class="tarjeta reveal delay-1">
+                    <div class="tarjeta-img-wrap tarjeta-img-wide minisumo-hero">
+                        <img src="images/minisumo_explotado.jpg" alt="Vista explotada: el caparazón levantado sobre el chasis">
+                    </div>
+                    <div class="tarjeta-body">
+                        <p class="tarjeta-label">Render 3D</p>
+                        <h3 class="tarjeta-titulo">Vista Explotada</h3>
+                        <p class="tarjeta-spec">El caparazón sale entero hacia arriba y deja todo el chasis a mano.</p>
+                    </div>
+                </div>
+
+                <div class="tarjeta reveal delay-2">
+                    <div class="tarjeta-img-wrap tarjeta-img-wide minisumo-hero">
+                        <img src="images/minisumo_interior.jpg" alt="Interior del robot sin el caparazón">
+                    </div>
+                    <div class="tarjeta-body">
+                        <p class="tarjeta-label">Render 3D</p>
+                        <h3 class="tarjeta-titulo">Interior</h3>
+                        <p class="tarjeta-spec">Motores, plomo, portapilas y la bandeja del ESP32, todo en 10 × 10 cm.</p>
+                    </div>
+                </div>
+
+                <div class="tarjeta reveal delay-3">
+                    <div class="tarjeta-img-wrap tarjeta-img-wide minisumo-hero">
+                        <img src="images/minisumo_atras.jpg" alt="Parte trasera del robot">
+                    </div>
+                    <div class="tarjeta-body">
+                        <p class="tarjeta-label">Render 3D</p>
+                        <h3 class="tarjeta-titulo">Parte Trasera</h3>
+                        <p class="tarjeta-spec">Caparazón en cuña y bien bajo, para que el rival no lo pueda levantar.</p>
+                    </div>
+                </div>
+            </div>
+            <p class="minisumo-nota reveal">Renders generados por computadora a partir del modelo 3D real del robot.</p>
         </section>
+
+        <!-- ── MODAL: Robot Minisumo ── -->
+        <div class="modal-overlay" id="modal-minisumo" role="dialog" aria-modal="true" aria-labelledby="modal-minisumo-titulo">
+            <div class="modal-panel modal-panel-ancho">
+                <button class="modal-close" onclick="cerrarModal('modal-minisumo')" aria-label="Cerrar">✕</button>
+                <div class="modal-header">
+                    <span class="modal-badge">Competencia Nacional de Minisumo</span>
+                    <h2 class="modal-titulo" id="modal-minisumo-titulo">Robot Minisumo "Cybertruck"</h2>
+                    <p class="modal-sub">ESP32 · C++ · Diseño e impresión 3D</p>
+                </div>
+
+                <h3 class="modal-seccion">Componentes</h3>
+                <ul class="modal-lista">
+                    <li><span class="modal-qty">×1</span><div><strong>ESP32 DevKit V1</strong><span>El cerebro: 2 núcleos, uno lee el láser y el otro corre el control a 1000 Hz</span></div></li>
+                    <li><span class="modal-qty">×1</span><div><strong>Driver TB6612FNG</strong><span>Maneja los dos motores hacia adelante y atrás con PWM</span></div></li>
+                    <li><span class="modal-qty">×2</span><div><strong>Motores N20 500 rpm</strong><span>Con ruedas de 44 × 17,5 mm</span></div></li>
+                    <li><span class="modal-qty">×1</span><div><strong>Sharp GP2Y0A02YK0F</strong><span>Sensor infrarrojo de distancia para encontrar al rival</span></div></li>
+                    <li><span class="modal-qty">×1</span><div><strong>VL53L0X</strong><span>Sensor láser de distancia, mira hacia adelante</span></div></li>
+                    <li><span class="modal-qty">×3</span><div><strong>TCRT5000</strong><span>Miran el piso y detectan el borde blanco del ring</span></div></li>
+                    <li><span class="modal-qty">×2</span><div><strong>Baterías 18650</strong><span>En serie: 7,4 V · llave SS12D00 · regulador Mini-360 a 5 V</span></div></li>
+                    <li><span class="modal-qty">×1</span><div><strong>Chasis y caparazón en PLA</strong><span>Diseñados en 3D e impresos en una Bambu Lab · lastre de plomo escondido</span></div></li>
+                </ul>
+
+                <h3 class="modal-seccion">Conexiones al ESP32</h3>
+                <div class="minisumo-tabla-wrap">
+                    <table class="minisumo-tabla">
+                        <thead>
+                            <tr><th>Componente</th><th>Pin</th><th>GPIO</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Sensores de línea (3)</td><td>A0 de cada TCRT5000</td><td>34 · 35 · 32</td></tr>
+                            <tr><td>Sharp</td><td>Vo</td><td>36</td></tr>
+                            <tr><td>VL53L0X</td><td>SDA · SCL</td><td>21 · 22</td></tr>
+                            <tr><td>Motor A (TB6612FNG)</td><td>PWMA · AIN1 · AIN2</td><td>25 · 26 · 27</td></tr>
+                            <tr><td>Motor B (TB6612FNG)</td><td>PWMB · BIN1 · BIN2</td><td>13 · 18 · 19</td></tr>
+                            <tr><td>TB6612FNG</td><td>STBY</td><td>23</td></tr>
+                            <tr><td>Divisor de batería</td><td>100 kΩ / 47 kΩ</td><td>39</td></tr>
+                            <tr><td>Botón de arranque</td><td>START</td><td>4</td></tr>
+                            <tr><td>LED de estado</td><td>Ánodo</td><td>2</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="modal-seccion">Estrategia de pelea</h3>
+                <ol class="minisumo-pasos">
+                    <li><strong>Arranque</strong> — espera los 5 segundos del reglamento y calibra el negro del ring.</li>
+                    <li><strong>Salida en media luna</strong> — rodea al rival para atacarlo de costado. En nuestro simulador ganó el 57 % de las peleas.</li>
+                    <li><strong>Ataque</strong> — si ve al rival a menos de 54 cm, va de frente a máxima potencia y la rampa lo levanta.</li>
+                    <li><strong>Escape del borde</strong> — si un sensor ve blanco: frena, retrocede y gira 180°.</li>
+                </ol>
+
+                <pre class="minisumo-codigo"><code>// Fragmento simplificado: escape del borde blanco
+if (lineaIzq || lineaCentro || lineaDer) {
+  frenar();             delay(25);
+  motores(-255, -255);  delay(100);   // atrás
+  motores( 255, -255);  delay(190);   // giro de 180°
+}</code></pre>
+
+                <div class="minisumo-aprendido">
+                    <strong>Lo que aprendimos</strong>
+                    <p>Un robot bajo es más difícil de levantar, pero adentro todo queda apretado. Probamos varias
+                        versiones del caparazón buscando el equilibrio entre altura y lugar para los cables, y
+                        aprendimos a contar el espacio del cableado desde el primer diseño.</p>
+                </div>
+            </div>
+        </div>
     </main>
 
     <!-- ── FOOTER ── -->
